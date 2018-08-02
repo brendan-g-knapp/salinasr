@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://brendan-g-knapp.github.io/salinasr/index.html</loc>
+  </url>
+  <url>
+    <loc>https://brendan-g-knapp.github.io/salinasr/reference/nap.html</loc>
+  </url>
+  <url>
+    <loc>https://brendan-g-knapp.github.io/salinasr/reference/nap_chr.html</loc>
+  </url>
+  <url>
+    <loc>https://brendan-g-knapp.github.io/salinasr/reference/nap_extract.html</loc>
+  </url>
+  <url>
+    <loc>https://brendan-g-knapp.github.io/salinasr/reference/nap_extract_chr.html</loc>
+  </url>
+  <url>
+    <loc>https://brendan-g-knapp.github.io/salinasr/reference/reexports.html</loc>
+  </url>
+  <url>
+    <loc>https://brendan-g-knapp.github.io/salinasr/reference/salinasr.html</loc>
+  </url>
+  <url>
+    <loc>https://brendan-g-knapp.github.io/salinasr/reference/sal_fetch_catalog.html</loc>
+  </url>
+  <url>
+    <loc>https://brendan-g-knapp.github.io/salinasr/reference/sal_research_catalog.html</loc>
+  </url>
+</urlset>

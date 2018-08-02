@@ -1,0 +1,25 @@
+url: https://brendan-g-knapp.github.io/salinasr
+
+authors:
+  Brendan Knapp:
+    href: https://syknapptic.netlify.com/
+
+development:
+  mode: unreleased
+  
+reference:
+  - title: Catalog
+    desc: Search available data sets to find the data you need.
+    contents:
+    - sal_fetch_catalog
+    - sal_research_catalog
+  
+
+navbar:
+  right:
+    - icon: fa-twitter
+      text: "Twitter"
+      href: https://twitter.com/brendan_g_knapp
+    - icon: fa-github fa-lg
+      text: "GitHub"
+      href: https://github.com/brendan-g-knapp/salinasr/
