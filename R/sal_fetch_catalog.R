@@ -1,9 +1,7 @@
 #' Fetch catalog of available data sets.
 #' 
-#' 
-#' 
 #' @param rss_url `character`, RSS feed URL. \cr
-#'     Default: `"https://cityofsalinas.opendatasoft.com/api/v2/catalog/exports/rss"`.
+#'     Default: `"https://cityofsalinas.opendatasoft.com/api/v2/catalog/exports/rss"`
 #'     
 #' @return [`tibble::tibble`] data frame with columns:
 #'     \item{\bold{`title`} }{`character`, data set title.}
