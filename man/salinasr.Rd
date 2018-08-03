@@ -14,7 +14,7 @@ Portal API, transform them into tidy data frames, and conduct analyses.
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://brendan-g-knapp.github.io/salinasr}
+  \item \url{https://brendan-g-knapp.github.io/salinasr/}
   \item Report bugs at \url{https://github.com/brendan-g-knapp/salinasr/issues}
 }
 

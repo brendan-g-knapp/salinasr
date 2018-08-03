@@ -32,9 +32,9 @@
 #' grocery_stores %>% pull(dataset_id)
 #'
 #' @importFrom dplyr arrange mutate select
-#' @importFrom stringr str_remove_all
+#' @importFrom stringr str_extract str_remove_all
 #' @importFrom tibble tibble
-#' @importFrom xml2 as_list read_xml read_html
+#' @importFrom xml2 as_list read_xml
 #' @export
 sal_fetch_catalog <- function(rss_url = "https://cityofsalinas.opendatasoft.com/api/v2/catalog/exports/rss") {
   xml_raw <- try_connection(xml2::read_xml(rss_url))

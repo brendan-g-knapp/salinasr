@@ -9,7 +9,7 @@
 }
 \arguments{
 \item{rss_url}{\code{character}, RSS feed URL. \cr
-Default: \code{"https://cityofsalinas.opendatasoft.com/api/v2/catalog/exports/rss"}.}
+Default: \code{"https://cityofsalinas.opendatasoft.com/api/v2/catalog/exports/rss"}}
 }
 \value{
 \code{\link[tibble:tibble]{tibble::tibble}} data frame with columns:

@@ -1,16 +1,23 @@
 
 <!-- README.Rmd generates README.md. -->
-salinasr
-========
+salinasr <img src="man/figures/logo.png" align="right" />
+=========================================================
+
+<br>
 
 An R package for programmatic access to the [Salinas Open Data Portal API](https://cityofsalinas.opendatasoft.com).
+
+<br><br><br><br><br>
 
 Installation
 ------------
 
 ``` r
 # Install the (exceptionally early) development version from GitHub.
-devtools::install_github("r-lib/pkgdown")
+if(!"devtools" %in% installed.packages()[, "Package"]) {
+  install.packages("devtools")
+}
+devtools::install_github("brendan-g-knapp/salinasr")
 ```
 
 Usage
