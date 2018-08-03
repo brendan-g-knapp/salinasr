@@ -3,6 +3,10 @@ library(magick)
 
 city_seal_url <- "http://files.ctctcdn.com/b9f56ac3301/ee9d8250-fe4b-490b-9879-378786452ae7.png"
 
+if(!dir.exists("man/figures")) {
+  dir.create("man/figures")
+} 
+
 dest_path <- "man/figures/logo.png"
 
 logo <- image_read(city_seal_url)

@@ -1,7 +1,7 @@
 # install.packages("roxygen2")
 pkgdown::clean_site()
 # devtools::as.package(".", create = TRUE)
-devtools::document(".")
+devtools::document(".",)
 devtools::install(".")
 source("data-raw/logo.R")
 rmarkdown::render("README.Rmd", output_format = "github_document")
