@@ -1,7 +1,7 @@
 
 <!-- README.Rmd generates README.md. -->
-salinasr <img src="man/figures/logo.png" align="right" />
-=========================================================
+salinasr <img src="man/figures/logo.png" align="right" height="300px" width="260px" />
+======================================================================================
 
 <br>
 

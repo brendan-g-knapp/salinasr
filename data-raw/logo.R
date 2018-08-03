@@ -23,8 +23,3 @@ sticker(expression(plot(logo)),
         u_color = "white",
         url = "github.com/brendan-g-knapp/salinasr",
         filename = dest_path)
-
-image_read(dest_path) %>% 
-  image_resize(geometry_size_percent(50, 50)) %>% 
-  image_write(dest_path)
-

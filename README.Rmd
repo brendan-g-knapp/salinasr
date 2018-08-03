@@ -26,7 +26,7 @@ sgr_wrap <- function(x, options){
 knitr::knit_hooks$set(output = sgr_wrap, warning=sgr_wrap, message=sgr_wrap)
 ```
 
-# salinasr <img src="man/figures/logo.png" align="right" />
+# salinasr <img src="man/figures/logo.png" align="right" height="300px" width="260px" />
 
 <br>
 
