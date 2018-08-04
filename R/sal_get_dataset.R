@@ -41,7 +41,7 @@
 #'                  "<b>Feet:</b> ", round(bikeways_sf$feet, 2) 
 #'                  )
 #'                ) %>% 
-#'   addLayersControl(baseGroups = c("Steet", "Optical"),
+#'   addLayersControl(baseGroups = c("Street", "Optical"),
 #'                    options = layersControlOptions(collapsed = FALSE))
 #'   
 #' @references [sf: Simple Features for R](https://r-spatial.github.io/sf/)
