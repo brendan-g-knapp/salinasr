@@ -26,22 +26,23 @@ sgr_wrap <- function(x, options){
 knitr::knit_hooks$set(output = sgr_wrap, warning=sgr_wrap, message=sgr_wrap)
 ```
 
-# salinasr <img src="man/figures/logo.png" align="right" height="300px" width="260px" />
+# salinasr <img src="man/figures/logo.png" align="right" height="270px" width="234px" />
 
 <br>
 
 An R package for programmatic access to the [Salinas Open Data Portal API](https://cityofsalinas.opendatasoft.com).
 
-<br><br><br><br><br>
+<br><br><br><br>
 
 ## Installation
 
 ```{r, eval=FALSE}
-# Install the (exceptionally early) development version from GitHub.
-if(!"devtools" %in% installed.packages()[, "Package"]) {
+# Install the (exceptionally early) development version from GitHub via {devtools}
+if(!require(devtools)) {
   install.packages("devtools")
 }
-devtools::install_github("brendan-g-knapp/salinasr")
+
+devtools::install_github("knapply/salinasr")
 ```
 
 
@@ -50,8 +51,14 @@ devtools::install_github("brendan-g-knapp/salinasr")
 ```{r, message=FALSE, warning=FALSE}
 library(salinasr)
 
-catalog <- sal_fetch_catalog()
+(bikeways_sf <- sal_get_metadata("bikeways") %>%
+  sal_get_dataset()) %>% 
+  dplyr::select(name, juris, miles)
+```
 
-catalog
+```{r, message=FALSE, warning=FALSE}
+ggmap::get_map("Salinas, CA", zoom = 11) %>% 
+  ggmap::ggmap() +
+  ggplot2::geom_sf(data = bikeways_sf, color = "red", inherit.aes = FALSE)
 ```
 

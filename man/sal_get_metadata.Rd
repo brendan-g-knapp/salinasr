@@ -2,26 +2,45 @@
 % Please edit documentation in R/sal_get_metadata.R
 \name{sal_get_metadata}
 \alias{sal_get_metadata}
-\title{Fetch a data set's meta data.}
+\alias{print.metadata}
+\title{Fetch a dataset's meta data.}
 \usage{
-sal_get_metadata(dataset_id)
+sal_get_metadata(dataset_id, cache = TRUE,
+  cache_path = "~/salinasr-cache")
+
+\method{print}{metadata}(x, cache_path = "~/salinasr-cache")
 }
 \arguments{
-\item{dataset_id}{\code{character}}
+\item{dataset_id}{\code{character}, ID used to identify dataset.
+See \url{https://cityofsalinas.opendatasoft.com/api/v2/console#!/dataset}.}
+
+\item{cache}{\code{logical}, whether to cache data locally to prevent redundant API calls.}
+
+\item{cache_path}{\code{character}, path to read/write data.}
+
+\item{x}{\code{metadata} object, as obtained by \code{sal_get_metadata()}.}
 }
 \value{
-\code{dataset} object, with
+\code{metadata} object
 }
 \description{
-Fetch a data set's meta data.
+Fetch a dataset's meta data.
 }
+\section{Methods (by generic)}{
+\itemize{
+\item \code{print}: 
+}}
+
 \examples{
 library(salinasr)
 
 meta <- sal_get_metadata("bikeways")
 
+meta
+
 meta$description
 
-meta$keyword
-
+}
+\author{
+Brendan Knapp \email{brendan.g.knapp@gmail.com}
 }

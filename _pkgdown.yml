@@ -1,4 +1,4 @@
-url: https://brendan-g-knapp.github.io/salinasr
+url: https://knapply.github.io/salinasr/
 
 authors:
   Brendan Knapp:
@@ -13,18 +13,21 @@ reference:
     contents:
     - sal_fetch_catalog
     - sal_research_catalog
-  - title: Access Data
-    desc: Get meta data and full data sets as useful R objects.
+  - title: Meta Data
+    desc: Access meta data of available datasets.
     contents:
     - sal_get_metadata
-    - sal_read_data
+  - title: Datasets
+    desc: Get datasets as useful R objects.
+    contents:
+    - sal_get_dataset
     - sal_describe_vars
 
 navbar:
   right:
     - icon: fa-twitter
       text: "Twitter"
-      href: https://twitter.com/brendan_g_knapp
+      href: https://twitter.com/knapply_
     - icon: fa-github fa-lg
       text: "GitHub"
-      href: https://github.com/brendan-g-knapp/salinasr/
+      href: https://github.com/knapply/salinasr

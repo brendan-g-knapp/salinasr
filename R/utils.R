@@ -76,21 +76,60 @@ gum <- function(..., .envir = parent.frame()) {
   as.character(glue(..., .envir = .envir))
 }
 
-check_status <- function(response) {
-  if(status_code(response) != 200) {
-    status <- status_code(response)
-    opts <- c("Moved Temporarily" = 302,
-              "Bad Request" = 400,
-              "Access denied due to missing subscription key...\n\t...Make sure to include subscription key when making requests to an API." = 401,
-              "Not Found" = 404,
-              "Internal Server Error" = 500,
-              "Service Unavailable" = 503,
-              "Unknown Response" = -99)
-    resp <- names(opts)[[match(status, opts, nomatch = length(opts))]]
-    details <- glue("API Request Failed.\nStatus Code: {status}\nResponse: {resp}")
-    stop(details, call. = FALSE)
+# check_status <- function(response) {
+#   if(status_code(response) != 200) {
+#     status <- status_code(response)
+#     opts <- c("Moved Temporarily" = 302,
+#               "Bad Request" = 400,
+#               "Access denied due to missing subscription key...\n\t...Make sure to include subscription key when making requests to an API." = 401,
+#               "Not Found" = 404,
+#               "Internal Server Error" = 500,
+#               "Service Unavailable" = 503,
+#               "Unknown Response" = -99)
+#     resp <- names(opts)[[match(status, opts, nomatch = length(opts))]]
+#     details <- glue("API Request Failed.\nStatus Code: {status}\nResponse: {resp}")
+#     stop(details, call. = FALSE)
+#   }
+# }
+
+#' @importFrom glue glue
+#' @importFrom readr write_rds
+#' @importFrom rlang arg_match
+cache_data <- function(x, dataset_id, type = c("metadata", "dataset"), 
+                       cache_path = "~/salinasr-cache") {
+  type <- rlang::arg_match(type, c("metadata", "dataset"))
+  metadata_path <- glue::glue("{cache_path}/metadata")
+  dataset_path <- glue::glue("{cache_path}/dataset")
+  if(!dir.exists(cache_path)) {
+    dir.create(cache_path)
   }
+  if(!dir.exists(metadata_path)) {
+    dir.create(metadata_path)
+  }
+  if(!dir.exists(metadata_path)) {
+    dir.create(dataset_path)
+  }
+  if(type == "metadata") {
+    target_path <- glue::glue("{metadata_path}/{dataset_id}-metadata.rds")
+  }
+  if(type == "dataset") {
+    target_path <- glue::glue("{dataset_path}/{dataset_id}.rds")
+  }
+  
+  readr::write_rds(x, target_path)
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
