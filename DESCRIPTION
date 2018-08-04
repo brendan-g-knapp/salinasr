@@ -10,7 +10,7 @@ Description: A framework to programmatically obtain data sets from the Salinas O
 Depends: R (>= 3.1.0)
 License: MIT + file LICENSE
 URL: https://knapply.github.io/salinasr/
-BugReports: https://knapply.github.io/salinasr/issues
+BugReports: https://github.com/knapply/salinasr/issues
 Encoding: UTF-8
 LazyData: true
 Imports: 

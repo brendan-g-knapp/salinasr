@@ -16,7 +16,7 @@ A framework to programmatically obtain data sets from the Salinas Open Data
 Useful links:
 \itemize{
   \item \url{https://knapply.github.io/salinasr/}
-  \item Report bugs at \url{https://knapply.github.io/salinasr/issues}
+  \item Report bugs at \url{https://github.com/knapply/salinasr/issues}
 }
 
 }
