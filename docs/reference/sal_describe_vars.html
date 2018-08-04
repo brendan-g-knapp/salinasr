@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • salinasr</title>
+<title>Describe a data set's variables. — sal_describe_vars • salinasr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,7 +30,9 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Describe a data set's variables. — sal_describe_vars" />
+
+<meta property="og:description" content="Describe a data set's variables." />
 
 <meta property="og:image" content="https://brendan-g-knapp.github.io/salinasr/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -49,7 +51,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -103,75 +105,64 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Describe a data set's variables.</h1>
+    
+    <div class="hidden name"><code>sal_describe_vars.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    
+    <p>Describe a data set's variables.</p>
+    
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
-
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-catalog" class="hasAnchor"><a href="#section-catalog" class="anchor"></a>Catalog</h2>
-          <p class="section-desc"><p>Search available data sets to find the data you need.</p></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="sal_fetch_catalog.html">sal_fetch_catalog()</a></code> </p>
-        </td>
-        <td><p>Fetch catalog of available data sets.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="sal_research_catalog.html">sal_research_catalog()</a></code> </p>
-        </td>
-        <td><p>Output catalog information in a format more conducive to reading.</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-access-data" class="hasAnchor"><a href="#section-access-data" class="anchor"></a>Access Data</h2>
-          <p class="section-desc"><p>Get meta data and full data sets as useful R objects.</p></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="sal_get_metadata.html">sal_get_metadata()</a></code> </p>
-        </td>
-        <td><p>Fetch a data set's meta data.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="sal_read_data.html">sal_read_data()</a></code> </p>
-        </td>
-        <td><p>Read a data set into an R object</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="sal_describe_vars.html">sal_describe_vars()</a></code> </p>
-        </td>
-        <td><p>Describe a data set's variables.</p></td>
-      </tr>
-    </tbody>
+    <pre class="usage"><span class='fu'>sal_describe_vars</span>(<span class='no'>dataset</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>dataset</th>
+      <td><p><code><a href='http://www.rdocumentation.org/packages/tibble/topics/tibble'>tibble::tibble</a></code> as obtained by <code><a href='sal_read_data.html'>sal_read_data()</a></code>.</p></td>
+    </tr>
     </table>
-  </div>
+    
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='no'>salinasr</span>)
+
+<span class='fu'><a href='sal_get_metadata.html'>sal_get_metadata</a></span>(<span class='st'>"bikeways"</span>) <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='sal_read_data.html'>sal_read_data</a></span>() <span class='kw'>%&gt;%</span>
+  <span class='fu'>sal_describe_vars</span>()</div><div class='output co'>#&gt; # A tibble: 11 x 3
+#&gt;    name         label           type        
+#&gt;    &lt;chr&gt;        &lt;chr&gt;           &lt;chr&gt;       
+#&gt;  1 objectid     OBJECTID        int         
+#&gt;  2 name         Bike path Name  text        
+#&gt;  3 class        Class           text        
+#&gt;  4 start        Starting Street text        
+#&gt;  5 end          Ending Street   text        
+#&gt;  6 feet         Length (ft)     double      
+#&gt;  7 miles        Length (miles)  double      
+#&gt;  8 juris        Jurisdiction    text        
+#&gt;  9 shape_length Shape_Length    double      
+#&gt; 10 geo_shape    geo_shape       geo_shape   
+#&gt; 11 geo_point_2d geo_point_2d    geo_point_2d</div><div class='input'>  
+</div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-catalog">Catalog</a></li>
-      <li><a href="#section-access-data">Access Data</a></li>
+      <li><a href="#arguments">Arguments</a></li>
+            
+      <li><a href="#examples">Examples</a></li>
     </ul>
+
+    <h2>Author</h2>
+    
+Brendan Knapp <a href='mailto:brendan.g.knapp@gmail.com'>brendan.g.knapp@gmail.com</a>
+
   </div>
 </div>
 

@@ -5,12 +5,16 @@ as_snake_case <- function(string) {
   stringr::str_to_lower(out)
 }
 
+if_empty_as_na <- function(x) {
+  ifelse(length(unlist(x)) == 0, NA, x)
+}
+
 are_null <- function(x) {
   vapply(x, is.null, logical(1))
 }
 
 if_null_as_na <- function(x, .type = NULL) {
-  if(is_null(.type)) {
+  if(is.null(.type)) {
     return(ifelse(is.null(x), NA, x))
   }
   return(ifelse(is.null(x), as(NA, .type), x))
@@ -21,7 +25,7 @@ if_null_as_na_chr <- function(x) {
 }
 
 drop_if_named <- function(x, .names) {
-  x[!names(x) %in% .name]
+  x[!names(x) %in% .names]
 }
 
 keep_if_named <- function(x, .names) {
@@ -72,9 +76,21 @@ gum <- function(..., .envir = parent.frame()) {
   as.character(glue(..., .envir = .envir))
 }
 
-
-
-
+check_status <- function(response) {
+  if(status_code(response) != 200) {
+    status <- status_code(response)
+    opts <- c("Moved Temporarily" = 302,
+              "Bad Request" = 400,
+              "Access denied due to missing subscription key...\n\t...Make sure to include subscription key when making requests to an API." = 401,
+              "Not Found" = 404,
+              "Internal Server Error" = 500,
+              "Service Unavailable" = 503,
+              "Unknown Response" = -99)
+    resp <- names(opts)[[match(status, opts, nomatch = length(opts))]]
+    details <- glue("API Request Failed.\nStatus Code: {status}\nResponse: {resp}")
+    stop(details, call. = FALSE)
+  }
+}
 
 
 

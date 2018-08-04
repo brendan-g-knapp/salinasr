@@ -76,7 +76,7 @@ sal_fetch_catalog <- function(rss_url = "https://cityofsalinas.opendatasoft.com/
 #'     Default: `getOption("width")`
 #' @param ... Additional arguments to be passed to other methods. Not currently used.
 #' 
-#' @return an `invisible` `NULL`)
+#' @return None (an `invisible` `NULL`)
 #' 
 #' @author Brendan Knapp \email{brendan.g.knapp@@gmail.com}
 #' 

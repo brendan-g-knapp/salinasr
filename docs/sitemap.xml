@@ -22,7 +22,16 @@
     <loc>https://brendan-g-knapp.github.io/salinasr/reference/salinasr.html</loc>
   </url>
   <url>
+    <loc>https://brendan-g-knapp.github.io/salinasr/reference/sal_describe_vars.html</loc>
+  </url>
+  <url>
     <loc>https://brendan-g-knapp.github.io/salinasr/reference/sal_fetch_catalog.html</loc>
+  </url>
+  <url>
+    <loc>https://brendan-g-knapp.github.io/salinasr/reference/sal_get_metadata.html</loc>
+  </url>
+  <url>
+    <loc>https://brendan-g-knapp.github.io/salinasr/reference/sal_read_data.html</loc>
   </url>
   <url>
     <loc>https://brendan-g-knapp.github.io/salinasr/reference/sal_research_catalog.html</loc>
