@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Describe a data set's variables. — sal_describe_vars • salinasr</title>
+<title>Describe a dataset's variables. — sal_describe_vars • salinasr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,11 +30,11 @@
 
 
 
-<meta property="og:title" content="Describe a data set's variables. — sal_describe_vars" />
+<meta property="og:title" content="Describe a dataset's variables. — sal_describe_vars" />
 
-<meta property="og:description" content="Describe a data set's variables." />
+<meta property="og:description" content="Describe a dataset's variables." />
 
-<meta property="og:image" content="https://brendan-g-knapp.github.io/salinasr/logo.png" />
+<meta property="og:image" content="https://knapply.github.io/salinasr/logo.png" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -82,14 +82,14 @@
       
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://twitter.com/brendan_g_knapp">
+  <a href="https://twitter.com/knapply_">
     <span class="fa fa-twitter"></span>
      
     Twitter
   </a>
 </li>
 <li>
-  <a href="https://github.com/brendan-g-knapp/salinasr/">
+  <a href="https://github.com/knapply/salinasr">
     <span class="fa fa-github fa-lg"></span>
      
     GitHub
@@ -107,14 +107,14 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Describe a data set's variables.</h1>
+    <h1>Describe a dataset's variables.</h1>
     
     <div class="hidden name"><code>sal_describe_vars.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Describe a data set's variables.</p>
+    <p>Describe a dataset's variables.</p>
     
     </div>
 
@@ -125,16 +125,24 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>dataset</th>
-      <td><p><code><a href='http://www.rdocumentation.org/packages/tibble/topics/tibble'>tibble::tibble</a></code> as obtained by <code><a href='sal_read_data.html'>sal_read_data()</a></code>.</p></td>
+      <td><p><code><a href='http://www.rdocumentation.org/packages/tibble/topics/tibble'>tibble::tibble</a></code> as obtained by <code><a href='sal_get_dataset.html'>sal_get_dataset()</a></code>.</p></td>
     </tr>
     </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p><code><a href='http://www.rdocumentation.org/packages/tibble/topics/tibble'>tibble::tibble</a></code> with columns:</p>
+<dt><b><code>name</code></b> </dt><dd><p>names of variables</p></dd>
+<dt><b><code>label</code></b> </dt><dd><p>(hopefully) helpful clarification of variables' names</p></dd>
+<dt><b><code>type</code></b> </dt><dd><p>original data type of variables</p></dd>
+
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='no'>salinasr</span>)
 
 <span class='fu'><a href='sal_get_metadata.html'>sal_get_metadata</a></span>(<span class='st'>"bikeways"</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='sal_read_data.html'>sal_read_data</a></span>() <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='sal_get_dataset.html'>sal_get_dataset</a></span>() <span class='kw'>%&gt;%</span>
   <span class='fu'>sal_describe_vars</span>()</div><div class='output co'>#&gt; # A tibble: 11 x 3
 #&gt;    name         label           type        
 #&gt;    &lt;chr&gt;        &lt;chr&gt;           &lt;chr&gt;       
@@ -155,7 +163,9 @@
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-            
+      
+      <li><a href="#value">Value</a></li>
+      
       <li><a href="#examples">Examples</a></li>
     </ul>
 

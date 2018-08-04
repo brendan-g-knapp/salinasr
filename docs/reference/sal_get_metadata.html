@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Fetch a data set's meta data. — sal_get_metadata • salinasr</title>
+<title>Fetch a dataset's meta data. — sal_get_metadata • salinasr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,11 +30,11 @@
 
 
 
-<meta property="og:title" content="Fetch a data set's meta data. — sal_get_metadata" />
+<meta property="og:title" content="Fetch a dataset's meta data. — sal_get_metadata" />
 
-<meta property="og:description" content="Fetch a data set's meta data." />
+<meta property="og:description" content="Fetch a dataset's meta data." />
 
-<meta property="og:image" content="https://brendan-g-knapp.github.io/salinasr/logo.png" />
+<meta property="og:image" content="https://knapply.github.io/salinasr/logo.png" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -82,14 +82,14 @@
       
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://twitter.com/brendan_g_knapp">
+  <a href="https://twitter.com/knapply_">
     <span class="fa fa-twitter"></span>
      
     Twitter
   </a>
 </li>
 <li>
-  <a href="https://github.com/brendan-g-knapp/salinasr/">
+  <a href="https://github.com/knapply/salinasr">
     <span class="fa fa-github fa-lg"></span>
      
     GitHub
@@ -107,31 +107,54 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Fetch a data set's meta data.</h1>
+    <h1>Fetch a dataset's meta data.</h1>
     
     <div class="hidden name"><code>sal_get_metadata.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Fetch a data set's meta data.</p>
+    <p>Fetch a dataset's meta data.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>sal_get_metadata</span>(<span class='no'>dataset_id</span>)</pre>
+    <pre class="usage"><span class='fu'>sal_get_metadata</span>(<span class='no'>dataset_id</span>, <span class='kw'>cache</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>cache_path</span> <span class='kw'>=</span> <span class='st'>"~/salinasr-cache"</span>)
+
+<span class='co'># S3 method for metadata</span>
+<span class='fu'>print</span>(<span class='no'>x</span>, <span class='kw'>cache_path</span> <span class='kw'>=</span> <span class='st'>"~/salinasr-cache"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>dataset_id</th>
-      <td><p><code>character</code></p></td>
+      <td><p><code>character</code>, ID used to identify dataset.
+See <a href='https://cityofsalinas.opendatasoft.com/api/v2/console#!/dataset'>https://cityofsalinas.opendatasoft.com/api/v2/console#!/dataset</a>.</p></td>
+    </tr>
+    <tr>
+      <th>cache</th>
+      <td><p><code>logical</code>, whether to cache data locally to prevent redundant API calls.</p></td>
+    </tr>
+    <tr>
+      <th>cache_path</th>
+      <td><p><code>character</code>, path to read/write data.</p></td>
+    </tr>
+    <tr>
+      <th>x</th>
+      <td><p><code>metadata</code> object, as obtained by <code>sal_get_metadata()</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>dataset</code> object, with</p>
+    <p><code>metadata</code> object</p>
+    
+    <h2 class="hasAnchor" id="methods-by-generic-"><a class="anchor" href="#methods-by-generic-"></a>Methods (by generic)</h2>
+
+    <ul>
+<li><p><code>print</code>:</p></li>
+</ul>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -139,8 +162,26 @@
 
 <span class='no'>meta</span> <span class='kw'>&lt;-</span> <span class='fu'>sal_get_metadata</span>(<span class='st'>"bikeways"</span>)
 
+<span class='no'>meta</span></div><div class='output co'>#&gt; dataset_id:                    bikeways 
+#&gt; metadata cache last modified:  2018-08-04 13:15:27 
+#&gt; dataset cache last modified:   N/A 
+#&gt; meta data attributes: 
+#&gt;     $attachments              $links 
+#&gt;     $attributions             $metadata_processed 
+#&gt;     $data_processed           $modified 
+#&gt;     $data_visible             $oauth_scope 
+#&gt;     $dataset_id               $parent_domain 
+#&gt;     $dataset_uid              $publisher 
+#&gt;     $description              $records_count 
+#&gt;     $features                 $references 
+#&gt;     $fields                   $source_dataset 
+#&gt;     $geographic_area          $source_domain 
+#&gt;     $geographic_area_mode     $source_domain_address 
+#&gt;     $has_records              $source_domain_title 
+#&gt;     $keyword                  $theme 
+#&gt;     $language                 $title 
+#&gt;     $license                   </div><div class='input'>
 <span class='no'>meta</span>$<span class='no'>description</span></div><div class='output co'>#&gt; [1] "This layer depicts the different types of bike paths around the city of Salinas, CA, portions of South Monterey County, and the Monterey Peninsula. This data is useful for projects relating to planning, community development, traffic, engineering, and numerous others. The field titled 'class' describes the type of bike path: Class 1: Bike paths Class 2: Bike lane or Buffered Bike Lane Class 3: Bike routes, aka sharrows or shared-lane marking Class 4: Separated Bikeway Class 6: Unofficial Class 7: Unpaved Th is service was created by the GIS team in 2017. Its primary function is to act as a service for the online web maps that can be found on the Map Gallery within the City of Salinas website."</div><div class='input'>
-<span class='no'>meta</span>$<span class='no'>keyword</span></div><div class='output co'>#&gt; [1] "City of Salinas"</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -149,9 +190,15 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#methods-by-generic-">Methods (by generic)</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>
+
+    <h2>Author</h2>
+    
+Brendan Knapp <a href='mailto:brendan.g.knapp@gmail.com'>brendan.g.knapp@gmail.com</a>
 
   </div>
 </div>

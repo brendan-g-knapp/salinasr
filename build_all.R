@@ -2,7 +2,7 @@
 if(dir.exists("docs")) pkgdown::clean_site(".")
 # devtools::as.package(".", create = TRUE)
 devtools::document(".")
-devtools::install(".")
+devtools::install(".", dependencies = FALSE, upgrade_dependencies = FALSE)
 source("data-raw/logo.R")
 rmarkdown::render("README.Rmd", output_format = "github_document")
 # pkgdown::clean_site()

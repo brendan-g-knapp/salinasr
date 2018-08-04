@@ -4,7 +4,8 @@
 \alias{sal_research_catalog}
 \title{Output catalog information in a format more conducive to reading.}
 \usage{
-sal_research_catalog(sal_catalog, n = 5L, width = getOption("width"), ...)
+sal_research_catalog(sal_catalog, n = 5L, width = getOption("width"),
+  ...)
 }
 \arguments{
 \item{sal_catalog}{\code{\link[tibble:tibble]{tibble::tibble}}, as returned by \code{sal_fetch_catalog}.}

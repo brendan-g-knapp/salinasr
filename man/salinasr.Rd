@@ -4,18 +4,19 @@
 \name{salinasr}
 \alias{salinasr}
 \alias{salinasr-package}
-\alias{salinasr-package}
 \title{salinasr: A framework to programmatically obtain data sets from the Salinas Open Data
 Portal API, transform them into tidy data frames, and conduct analyses.}
 \description{
-salinasr: A framework to programmatically obtain data sets from the Salinas Open Data
-Portal API, transform them into tidy data frames, and conduct analyses.
+\if{html}{\figure{logo.png}{options: align='right'}}
+
+A framework to programmatically obtain data sets from the Salinas Open Data 
+    Portal API, transform them into tidy data frames, and conduct analyses.
 }
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://brendan-g-knapp.github.io/salinasr/}
-  \item Report bugs at \url{https://github.com/brendan-g-knapp/salinasr/issues}
+  \item \url{https://knapply.github.io/salinasr/}
+  \item Report bugs at \url{https://knapply.github.io/salinasr/issues}
 }
 
 }

@@ -3,6 +3,6 @@ pkgdown: 1.1.0.9000
 pkgdown_sha: be03b4b7b3d5203ba67423ff6888ab92f1420b76
 articles: []
 urls:
-  reference: https://brendan-g-knapp.github.io/salinasr/reference
-  article: https://brendan-g-knapp.github.io/salinasr/articles
+  reference: https://knapply.github.io/salinasr//reference
+  article: https://knapply.github.io/salinasr//articles
 
