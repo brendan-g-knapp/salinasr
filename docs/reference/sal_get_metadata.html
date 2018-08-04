@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • salinasr</title>
+<title>Fetch a data set's meta data. — sal_get_metadata • salinasr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,7 +30,9 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Fetch a data set's meta data. — sal_get_metadata" />
+
+<meta property="og:description" content="Fetch a data set's meta data." />
 
 <meta property="og:image" content="https://brendan-g-knapp.github.io/salinasr/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -49,7 +51,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -103,75 +105,54 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Fetch a data set's meta data.</h1>
+    
+    <div class="hidden name"><code>sal_get_metadata.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    
+    <p>Fetch a data set's meta data.</p>
+    
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
-
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-catalog" class="hasAnchor"><a href="#section-catalog" class="anchor"></a>Catalog</h2>
-          <p class="section-desc"><p>Search available data sets to find the data you need.</p></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="sal_fetch_catalog.html">sal_fetch_catalog()</a></code> </p>
-        </td>
-        <td><p>Fetch catalog of available data sets.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="sal_research_catalog.html">sal_research_catalog()</a></code> </p>
-        </td>
-        <td><p>Output catalog information in a format more conducive to reading.</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-access-data" class="hasAnchor"><a href="#section-access-data" class="anchor"></a>Access Data</h2>
-          <p class="section-desc"><p>Get meta data and full data sets as useful R objects.</p></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="sal_get_metadata.html">sal_get_metadata()</a></code> </p>
-        </td>
-        <td><p>Fetch a data set's meta data.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="sal_read_data.html">sal_read_data()</a></code> </p>
-        </td>
-        <td><p>Read a data set into an R object</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="sal_describe_vars.html">sal_describe_vars()</a></code> </p>
-        </td>
-        <td><p>Describe a data set's variables.</p></td>
-      </tr>
-    </tbody>
+    <pre class="usage"><span class='fu'>sal_get_metadata</span>(<span class='no'>dataset_id</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>dataset_id</th>
+      <td><p><code>character</code></p></td>
+    </tr>
     </table>
-  </div>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
+    <p><code>dataset</code> object, with</p>
+    
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='no'>salinasr</span>)
+
+<span class='no'>meta</span> <span class='kw'>&lt;-</span> <span class='fu'>sal_get_metadata</span>(<span class='st'>"bikeways"</span>)
+
+<span class='no'>meta</span>$<span class='no'>description</span></div><div class='output co'>#&gt; [1] "This layer depicts the different types of bike paths around the city of Salinas, CA, portions of South Monterey County, and the Monterey Peninsula. This data is useful for projects relating to planning, community development, traffic, engineering, and numerous others. The field titled 'class' describes the type of bike path: Class 1: Bike paths Class 2: Bike lane or Buffered Bike Lane Class 3: Bike routes, aka sharrows or shared-lane marking Class 4: Separated Bikeway Class 6: Unofficial Class 7: Unpaved Th is service was created by the GIS team in 2017. Its primary function is to act as a service for the online web maps that can be found on the Map Gallery within the City of Salinas website."</div><div class='input'>
+<span class='no'>meta</span>$<span class='no'>keyword</span></div><div class='output co'>#&gt; [1] "City of Salinas"</div><div class='input'>
+</div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-catalog">Catalog</a></li>
-      <li><a href="#section-access-data">Access Data</a></li>
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#value">Value</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
     </ul>
+
   </div>
 </div>
 

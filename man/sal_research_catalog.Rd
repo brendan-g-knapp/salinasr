@@ -17,7 +17,7 @@ Default: \code{getOption("width")}}
 \item{...}{Additional arguments to be passed to other methods. Not currently used.}
 }
 \value{
-an \code{invisible} \code{NULL})
+None (an \code{invisible} \code{NULL})
 }
 \description{
 This is intended to be helpful when specific search parameters are unknown
