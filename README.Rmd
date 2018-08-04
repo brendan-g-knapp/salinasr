@@ -8,7 +8,8 @@ output:
 
 ```{r, echo = FALSE}
 knitr::opts_chunk$set(
-  collapse = TRUE,
+  collapse = TRUE, 
+  fig.align = "center",
   comment = "#>",
   fig.path = "man/figures/"
 )
@@ -37,7 +38,7 @@ An R package for programmatic access to the [Salinas Open Data Portal API](https
 ## Installation
 
 ```{r, eval=FALSE}
-# Install the (exceptionally early) development version from GitHub via {devtools}
+# install the (exceptionally early) development version from GitHub via {devtools}
 if(!require(devtools)) {
   install.packages("devtools")
 }
@@ -50,15 +51,29 @@ devtools::install_github("knapply/salinasr")
 
 ```{r, message=FALSE, warning=FALSE}
 library(salinasr)
+library(leaflet)
 
-(bikeways_sf <- sal_get_metadata("bikeways") %>%
-  sal_get_dataset()) %>% 
-  dplyr::select(name, juris, miles)
+bikeways_sf <- sal_get_metadata("bikeways") %>% 
+  sal_get_dataset()
 ```
 
-```{r, message=FALSE, warning=FALSE}
-ggmap::get_map("Salinas, CA", zoom = 11) %>% 
-  ggmap::ggmap() +
-  ggplot2::geom_sf(data = bikeways_sf, color = "red", inherit.aes = FALSE)
+```{r}
+bikeways_sf %>%
+  leaflet() %>%
+  addProviderTiles(leaflet::providers$OpenStreetMap, group = "Street") %>%
+  addProviderTiles(providers$Esri.WorldImagery, group = "Optical") %>%
+  addPolylines(label = ~ name,
+               popup = paste0(
+                 "<b>Name:</b> ", bikeways_sf$name, "<br>",
+                 "<b>Jurisdiction:</b> ", bikeways_sf$juris, "<br>",
+                 "<b>Start:</b> ", bikeways_sf$start, "<br>",
+                 "<b>End</b>: ", bikeways_sf$end, "<br>",
+                 "<b>Miles:</b> ", round(bikeways_sf$miles, 2), "<br>",
+                 "<b>Feet:</b> ", round(bikeways_sf$feet, 2)
+                 )
+               ) %>%
+  addLayersControl(baseGroups = c("Steet", "Optical"),
+                   options = layersControlOptions(collapsed = FALSE))
 ```
+
 
