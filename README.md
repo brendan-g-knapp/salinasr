@@ -35,8 +35,8 @@ bikeways_sf <- sal_get_metadata("bikeways") %>%
 ``` r
 bikeways_sf %>%
   leaflet() %>%
-  addProviderTiles(leaflet::providers$OpenStreetMap, group = "Street") %>%
-  addProviderTiles(providers$Esri.WorldImagery, group = "Optical") %>%
+  addProviderTiles(leaflet::providers$OpenStreetMap, group = "Street Map") %>%
+  addProviderTiles(providers$Esri.WorldImagery, group = "Optical Imagery") %>%
   addPolylines(label = ~ name,
                popup = paste0(
                  "<b>Name:</b> ", bikeways_sf$name, "<br>",
@@ -47,7 +47,7 @@ bikeways_sf %>%
                  "<b>Feet:</b> ", round(bikeways_sf$feet, 2)
                  )
                ) %>%
-  addLayersControl(baseGroups = c("Steet", "Optical"),
+  addLayersControl(baseGroups = c("Street Map", "Optical Imagery"),
                    options = layersControlOptions(collapsed = FALSE))
 ```
 
