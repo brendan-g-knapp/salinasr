@@ -2,6 +2,8 @@
 #' @importFrom magrittr %>%
 NULL
 
+#' @seealso [`magrittr::`%>%`()`]
+#' 
 #' @importFrom magrittr %>%
 #' @export
 magrittr::`%>%`

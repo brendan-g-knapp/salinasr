@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Authors • salinasr</title>
+<title>Cache data obtained from the API. — cache_data • salinasr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -25,12 +25,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
-<link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script>
+<link href="../pkgdown.css" rel="stylesheet">
+<script src="../pkgdown.js"></script>
 
 
 
-<meta property="og:title" content="Authors" />
+<meta property="og:title" content="Cache data obtained from the API. — cache_data" />
+
+<meta property="og:description" content="Convenience function to minimize redundant API calls and generally be a polite Internet
+citizen." />
 
 <meta property="og:image" content="https://knapply.github.io/salinasr/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -59,7 +62,7 @@
   </head>
 
   <body>
-    <div class="container template-authors">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -70,7 +73,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="index.html">salinasr</a>
+        <a class="navbar-link" href="../index.html">salinasr</a>
         <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased package">0.1.1</span>
       </span>
     </div>
@@ -78,14 +81,14 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="index.html">
+  <a href="../index.html">
     <span class="fa fa-home"></span>
      
     Home
   </a>
 </li>
 <li>
-  <a href="reference/index.html">
+  <a href="../reference/index.html">
     <span class="fa fa-file-code-o"></span>
      
     Functions
@@ -116,22 +119,64 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Authors</h1>
+    <h1>Cache data obtained from the API.</h1>
+    
+    <div class="hidden name"><code>cache_data.Rd</code></div>
     </div>
 
-    <ul class="list-unstyled">
-      <li>
-        <p><strong><a href='https://syknapptic.netlify.com/'>Brendan Knapp</a></strong>. Author, maintainer. <a href='https://orcid.org/0000-0003-3284-4972' target='orcid.widget'><img src='https://members.orcid.org/sites/default/files/vector_iD_icon.svg' class='orcid' height='16'></a>
-        </p>
-      </li>
-    </ul>
+    <div class="ref-description">
+    
+    <p>Convenience function to minimize redundant API calls and generally be a polite Internet
+citizen.</p>
+    
+    </div>
+
+    <pre class="usage"><span class='fu'>cache_data</span>(<span class='no'>x</span>, <span class='no'>dataset_id</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"metadata"</span>, <span class='st'>"dataset"</span>),
+  <span class='kw'>cache_dir</span> <span class='kw'>=</span> <span class='st'>"~/salinasr-cache"</span>, <span class='no'>...</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p>Either a <code>metadata</code> object or a <code><a href='http://www.rdocumentation.org/packages/tibble/topics/tibble'>tibble::tibble</a></code>.</p></td>
+    </tr>
+    <tr>
+      <th>dataset_id</th>
+      <td><p><code>character</code>, ID used to identify dataset.</p></td>
+    </tr>
+    <tr>
+      <th>type</th>
+      <td><p><code>character</code>, <code>"metadata"</code> or <code>"dataset"</code>.</p></td>
+    </tr>
+    <tr>
+      <th>cache_dir</th>
+      <td><p><code>character</code>, path to read/write data.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Additional arguments passed on to <code><a href='http://www.rdocumentation.org/packages/readr/topics/read_rds'>readr::write_rds()</a></code>.</p></td>
+    </tr>
+    </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p><code><a href='http://www.rdocumentation.org/packages/readr/topics/read_rds'>readr::write_rds</a></code> returns <code>x</code> invisibly.</p>
+    
 
   </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+    <h2>Contents</h2>
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#value">Value</a></li>
+          </ul>
 
+  </div>
 </div>
-
 
       <footer>
       <div class="copyright">

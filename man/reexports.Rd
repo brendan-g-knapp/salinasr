@@ -5,6 +5,9 @@
 \alias{reexports}
 \alias{\%>\%}
 \title{Objects exported from other packages}
+\seealso{
+\link[`magrittr:`\%>\%`()`]{magrittr::\%>\%()}
+}
 \keyword{internal}
 \description{
 These objects are imported from other packages. Follow the links

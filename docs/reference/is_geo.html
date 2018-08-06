@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Test if an object is <code>metadata</code>. — is_metadata • salinasr</title>
+<title>Does a dataset contain geospatial features? — is_geo • salinasr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Test if an object is <code>metadata</code>. — is_metadata" />
+<meta property="og:title" content="Does a dataset contain geospatial features? — is_geo" />
 
-<meta property="og:description" content="Test if an object is metadata." />
+<meta property="og:description" content="Does a dataset contain geospatial features?" />
 
 <meta property="og:image" content="https://knapply.github.io/salinasr/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -120,39 +120,63 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Test if an object is <code>metadata</code>.</h1>
+    <h1>Does a dataset contain geospatial features?</h1>
     
-    <div class="hidden name"><code>is_metadata.Rd</code></div>
+    <div class="hidden name"><code>is_geo.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Test if an object is <code>metadata</code>.</p>
+    <p>Does a dataset contain geospatial features?</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>is_metadata</span>(<span class='no'>x</span>)</pre>
+    <pre class="usage"><span class='fu'>is_geo</span>(<span class='no'>x</span>)
+
+<span class='co'># S3 method for metadata</span>
+<span class='fu'>is_geo</span>(<span class='no'>x</span>)
+
+<span class='co'># S3 method for tbl_df</span>
+<span class='fu'>is_geo</span>(<span class='no'>x</span>)
+
+<span class='co'># S3 method for character</span>
+<span class='fu'>is_geo</span>(<span class='no'>x</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>Any R object</p></td>
+      <td><p>A <code>metadata</code> object obtained by <code><a href='sal_get_metadata.html'>sal_get_metadata()</a></code>, a <code>tibble</code> obtained via
+<code><a href='sal_get_dataset.html'>sal_get_dataset()</a></code>, or a <code>character</code> representing a <code>dataset_id</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>logical</code>, <code>TRUE</code> if the object inherits from the <code>metadata</code> class.</p>
+    <p><code>logical</code>, whether a dataset is annotated as containing geospatial features.</p>
+    
+    <h2 class="hasAnchor" id="methods-by-class-"><a class="anchor" href="#methods-by-class-"></a>Methods (by class)</h2>
+
+    <ul>
+<li><p><code>metadata</code>: Method to check if a <code>metadata</code> object obtained via <code><a href='sal_get_metadata.html'>sal_get_metadata()</a></code> references a
+dataset that <code>is_geo()</code>.</p></li>
+<li><p><code>tbl_df</code>: Method to check if a <code>tibble</code> obtained via <code><a href='sal_get_dataset.html'>sal_get_dataset()</a></code> references a dataset
+that <code>is_geo()</code>.</p></li>
+<li><p><code>character</code>: Method to check if a <code>character</code> representing a <code>dataset_id</code> references a dataset that
+<code>is_geo()</code>.</p></li>
+</ul>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='no'>salinasr</span>)
 
-<span class='no'>meta</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='sal_get_metadata.html'>sal_get_metadata</a></span>(<span class='st'>"bikeways"</span>)
-
-<span class='fu'>is_metadata</span>(<span class='no'>meta</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>  
+<span class='fu'>is_geo</span>(<span class='st'>"bikeways"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
+<span class='fu'><a href='sal_get_metadata.html'>sal_get_metadata</a></span>(<span class='st'>"bikeways"</span>) <span class='kw'>%&gt;%</span>
+  <span class='fu'>is_geo</span>()</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
+<span class='fu'><a href='sal_get_metadata.html'>sal_get_metadata</a></span>(<span class='st'>"bikeways"</span>) <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='sal_get_dataset.html'>sal_get_dataset</a></span>() <span class='kw'>%&gt;%</span>
+  <span class='fu'>is_geo</span>()</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -161,6 +185,8 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#methods-by-class-">Methods (by class)</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

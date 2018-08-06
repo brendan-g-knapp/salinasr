@@ -11,8 +11,8 @@
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
+<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
@@ -46,6 +46,16 @@
 <![endif]-->
 
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115043043-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-115043043-4');
+</script>
+
   </head>
 
   <body>
@@ -61,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">salinasr</a>
-        <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased package">0.1.0</span>
+        <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased package">0.1.1</span>
       </span>
     </div>
 
@@ -69,12 +79,17 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fa fa-home"></span>
      
+    Home
   </a>
 </li>
 <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="../reference/index.html">
+    <span class="fa fa-file-code-o"></span>
+     
+    Functions
+  </a>
 </li>
       </ul>
       
@@ -83,14 +98,12 @@
   <a href="https://twitter.com/knapply_">
     <span class="fa fa-twitter"></span>
      
-    Twitter
   </a>
 </li>
 <li>
   <a href="https://github.com/knapply/salinasr">
     <span class="fa fa-github fa-lg"></span>
      
-    GitHub
   </a>
 </li>
       </ul>
@@ -149,6 +162,12 @@
           <p><code><a href="sal_get_metadata.html">sal_get_metadata()</a></code> <code><a href="sal_get_metadata.html">print(<i>&lt;metadata&gt;</i>)</a></code> </p>
         </td>
         <td><p>Get a dataset's <code>metadata</code>.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="sal_get_export_link.html">sal_get_export_link()</a></code> </p>
+        </td>
+        <td><p>Obtain a URL pointing to a specific dataset in the desired file type.</p></td>
       </tr>
     </tbody><tbody>
       <tr>
@@ -174,10 +193,28 @@
       <tr>
         <th colspan="2">
           <h2 id="section-utilities" class="hasAnchor"><a href="#section-utilities" class="anchor"></a>Utilities</h2>
-          <p class="section-desc"><p>Functions mainly intended for internal use that may be useful.</p></p>
+          <p class="section-desc"><p>Internal functions that are generally useful.</p></p>
         </th>
       </tr>
       <tr>
+        
+        <td>
+          <p><code><a href="clean_html.html">clean_html()</a></code> </p>
+        </td>
+        <td><p>Remove HTML tags from a string.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="is_empty.html">is_empty()</a></code> </p>
+        </td>
+        <td><p>Does an object contain anything?</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="is_geo.html">is_geo()</a></code> </p>
+        </td>
+        <td><p>Does a dataset contain geospatial features?</p></td>
+      </tr><tr>
         
         <td>
           <p><code><a href="is_metadata.html">is_metadata()</a></code> </p>
@@ -186,15 +223,15 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="sal_get_export_link.html">sal_get_export_link()</a></code> </p>
+          <p><code><a href="gum.html">gum()</a></code> </p>
         </td>
-        <td><p>Obtain a URL pointing to a specific dataset in the desired file type.</p></td>
+        <td><p>A wrapper around <code><a href='http://www.rdocumentation.org/packages/glue/topics/glue'>glue::glue()</a></code> to remove <code>glue</code> class.</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="sal_finalize_dataset.html">sal_finalize_dataset()</a></code> </p>
+          <p><code><a href="keep_if_named.html">keep_if_named()</a></code> </p>
         </td>
-        <td><p>Enforce a <code>dataset</code>'s data types, as described in its <code>metadata</code>.</p></td>
+        <td><p>Filter an object to only contained elements with desired <code>.names</code>.</p></td>
       </tr>
     </tbody>
     </table>

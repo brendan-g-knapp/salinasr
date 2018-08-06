@@ -1,7 +1,9 @@
 
 <!-- README.Rmd generates README.md. -->
-salinasr <img src="man/figures/logo.png" align="right" height="270px" width="234px" />
+salinasr <img src="man/figures/logo.png" align="right" height="243px" width="211px" />
 ======================================================================================
+
+[![](https://img.shields.io/badge/devel%20version-0.1.1-green.svg)](https://github.com/knapply/salinasr)
 
 <br>
 

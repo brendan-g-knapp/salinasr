@@ -11,8 +11,8 @@
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
+<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
@@ -32,7 +32,7 @@
 
 <meta property="og:title" content="Get a dataset's <code>metadata</code>. — sal_get_metadata" />
 
-<meta property="og:description" content="The metadata class is a thin wrapper around a nested list object that
+<meta property="og:description" content="The metadata class is a thin wrapper around a nested list object. It
 provides a consistent start point to explore information about datasets and
 safely import them into R." />
 
@@ -50,6 +50,16 @@ safely import them into R." />
 <![endif]-->
 
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115043043-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-115043043-4');
+</script>
+
   </head>
 
   <body>
@@ -65,7 +75,7 @@ safely import them into R." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">salinasr</a>
-        <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased package">0.1.0</span>
+        <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased package">0.1.1</span>
       </span>
     </div>
 
@@ -73,12 +83,17 @@ safely import them into R." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fa fa-home"></span>
      
+    Home
   </a>
 </li>
 <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="../reference/index.html">
+    <span class="fa fa-file-code-o"></span>
+     
+    Functions
+  </a>
 </li>
       </ul>
       
@@ -87,14 +102,12 @@ safely import them into R." />
   <a href="https://twitter.com/knapply_">
     <span class="fa fa-twitter"></span>
      
-    Twitter
   </a>
 </li>
 <li>
   <a href="https://github.com/knapply/salinasr">
     <span class="fa fa-github fa-lg"></span>
      
-    GitHub
   </a>
 </li>
       </ul>
@@ -116,13 +129,14 @@ safely import them into R." />
 
     <div class="ref-description">
     
-    <p>The <code>metadata</code> class is a thin wrapper around a nested <code>list</code> object that
+    <p>The <code>metadata</code> class is a thin wrapper around a nested <code>list</code> object. It
 provides a consistent start point to explore information about <code>dataset</code>s and
 safely import them into R.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>sal_get_metadata</span>(<span class='no'>x</span>)
+    <pre class="usage"><span class='fu'>sal_get_metadata</span>(<span class='no'>x</span>, <span class='kw'>prioritize_cache</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>cache_dir</span> <span class='kw'>=</span> <span class='st'>"~/salinasr-cache"</span>)
 
 <span class='co'># S3 method for tbl_df</span>
 <span class='fu'>sal_get_metadata</span>(<span class='no'>x</span>, <span class='kw'>prioritize_cache</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
@@ -138,6 +152,11 @@ safely import them into R.</p>
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p><code>character</code> representing a <code>dataset_id</code> or <code>tibble</code> obtained via
+<code><a href='sal_get_dataset.html'>sal_get_dataset()</a></code>.</p></td>
+    </tr>
     <tr>
       <th>prioritize_cache</th>
       <td><p><code>logical</code>, whether to cache data locally to prevent redundant API calls.</p></td>

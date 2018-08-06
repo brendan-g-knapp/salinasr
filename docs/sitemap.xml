@@ -4,7 +4,28 @@
     <loc>https://knapply.github.io/salinasr//index.html</loc>
   </url>
   <url>
+    <loc>https://knapply.github.io/salinasr//reference/cache_data.html</loc>
+  </url>
+  <url>
+    <loc>https://knapply.github.io/salinasr//reference/clean_html.html</loc>
+  </url>
+  <url>
+    <loc>https://knapply.github.io/salinasr//reference/finalize_dataset.html</loc>
+  </url>
+  <url>
+    <loc>https://knapply.github.io/salinasr//reference/gum.html</loc>
+  </url>
+  <url>
+    <loc>https://knapply.github.io/salinasr//reference/is_empty.html</loc>
+  </url>
+  <url>
+    <loc>https://knapply.github.io/salinasr//reference/is_geo.html</loc>
+  </url>
+  <url>
     <loc>https://knapply.github.io/salinasr//reference/is_metadata.html</loc>
+  </url>
+  <url>
+    <loc>https://knapply.github.io/salinasr//reference/keep_if_named.html</loc>
   </url>
   <url>
     <loc>https://knapply.github.io/salinasr//reference/reexports.html</loc>
@@ -17,9 +38,6 @@
   </url>
   <url>
     <loc>https://knapply.github.io/salinasr//reference/sal_fetch_catalog.html</loc>
-  </url>
-  <url>
-    <loc>https://knapply.github.io/salinasr//reference/sal_finalize_dataset.html</loc>
   </url>
   <url>
     <loc>https://knapply.github.io/salinasr//reference/sal_get_dataset.html</loc>

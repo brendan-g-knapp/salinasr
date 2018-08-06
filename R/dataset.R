@@ -10,15 +10,14 @@
 #' 
 #' @return [`tibble::tibble`], which will also be an [`sf::st_sf`] object if
 #'  `metadata` refers to data marked as having `"geo"` features.
+#'  
+#' @references \url{https://cityofsalinas.opendatasoft.com/explore/}
 #'    
 #' @author Brendan Knapp \email{brendan.g.knapp@@gmail.com}
 #' 
 #' @examples 
 #' library(salinasr)
-#' library(sf, quietly = TRUE)
-#' library(ggmap, quietly = TRUE)
 #' library(ggplot2)
-#' library(leaflet)
 #' 
 #' bikeways_sf <- sal_get_metadata("bikeways") %>% 
 #'   sal_get_dataset()
@@ -26,11 +25,6 @@
 #' bikeways_sf %>% 
 #'   ggplot() +
 #'   geom_sf()
-#' 
-#' sal_base_map <- get_map("Salinas, CA", zoom = 11)
-#' 
-#' ggmap(sal_base_map) +
-#'   geom_sf(data = bikeways_sf, color = "red", inherit.aes = FALSE) 
 #' 
 #' @importFrom dplyr bind_rows
 #' @importFrom glue glue
@@ -53,7 +47,7 @@ sal_get_dataset <- function(metadata, prioritize_cache = TRUE,
     sf <- st_read(geojson, stringsAsFactors = FALSE, quiet = TRUE)
     sf <- as_tibble(sf)
     sf <- st_as_sf(sf)
-    out <- sal_finalize_dataset(sf, metadata, ...)
+    out <- finalize_dataset(sf, metadata, ...)
     
     return(out)
   }
@@ -62,7 +56,7 @@ sal_get_dataset <- function(metadata, prioritize_cache = TRUE,
   cont <- content(resp, as = "text")
   raw_list <- fromJSON(cont, simplifyVector = FALSE)
   out <- bind_rows(raw_list)
-  out <- sal_finalize_dataset(out, metadata, ...)
+  out <- finalize_dataset(out, metadata, ...)
   
   out
 }

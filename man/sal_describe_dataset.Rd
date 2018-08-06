@@ -16,7 +16,8 @@ sal_describe_dataset(x)
 \method{sal_describe_dataset}{metadata}(x)
 }
 \arguments{
-\item{dataset}{\code{\link[tibble:tibble]{tibble::tibble}} as obtained by \code{sal_get_dataset()}.}
+\item{x}{A \code{character} describing a \code{dataset_id}, a \code{tibble} as obtained by
+\code{sal_get_dataset()} or a \code{metadata} object as obtained by \code{sal_get_metadata()}.}
 }
 \value{
 \code{\link[tibble:tibble]{tibble::tibble}} with columns:

@@ -7,7 +7,8 @@
 \alias{print.metadata}
 \title{Get a dataset's \code{metadata}.}
 \usage{
-sal_get_metadata(x)
+sal_get_metadata(x, prioritize_cache = TRUE,
+  cache_dir = "~/salinasr-cache")
 
 \method{sal_get_metadata}{tbl_df}(x, prioritize_cache = TRUE,
   cache_dir = "~/salinasr-cache")
@@ -18,6 +19,9 @@ sal_get_metadata(x)
 \method{print}{metadata}(x, cache_dir = "~/salinasr-cache")
 }
 \arguments{
+\item{x}{\code{character} representing a \code{dataset_id} or \code{tibble} obtained via
+\code{sal_get_dataset()}.}
+
 \item{prioritize_cache}{\code{logical}, whether to cache data locally to prevent redundant API calls.}
 
 \item{cache_dir}{\code{character}, path to read/write data.}
@@ -28,7 +32,7 @@ sal_get_metadata(x)
 \code{metadata} object
 }
 \description{
-The \code{metadata} class is a thin wrapper around a nested \code{list} object that
+The \code{metadata} class is a thin wrapper around a nested \code{list} object. It
 provides a consistent start point to explore information about \code{dataset}s and
 safely import them into R.
 }
