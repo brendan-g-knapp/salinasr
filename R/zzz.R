@@ -1,3 +1,3 @@
 .onAttach <- function(libname, pkgname){
-  Sys.setlocale(locale = "spanish")
+  # Sys.setlocale(locale = "spanish")
 }

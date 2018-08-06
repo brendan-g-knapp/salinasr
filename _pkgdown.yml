@@ -3,6 +3,11 @@ url: https://knapply.github.io/salinasr/
 authors:
   Brendan Knapp:
     href: https://syknapptic.netlify.com/
+    
+template:
+  params:
+    bootswatch: cosmo
+    ganalytics: UA-115043043-4
 
 development:
   mode: unreleased
@@ -17,23 +22,33 @@ reference:
     desc: A class with methods to explore metadata and the datasets they describe.
     contents:
     - sal_get_metadata
+    - sal_get_export_link
   - title: Dataset
     desc: Methods to import datasets directly into R as immediately useful objects.
     contents:
     - sal_get_dataset
     - sal_describe_dataset
   - title: Utilities
-    desc: Functions mainly intended for internal use that may be useful.
+    desc: Internal functions that are generally useful.
     contents:
+    - clean_html
+    - is_empty
+    - is_geo
     - is_metadata
-    - sal_get_export_link
-    - sal_finalize_dataset
+    - gum
+    - keep_if_named
 
 navbar:
+  left:
+    - icon: fa-home
+      text: "Home"
+      href: index.html
+    - icon: fa-file-code-o 
+      text: "Functions"
+      href: reference/index.html
   right:
     - icon: fa-twitter
-      text: "Twitter"
       href: https://twitter.com/knapply_
     - icon: fa-github fa-lg
-      text: "GitHub"
       href: https://github.com/knapply/salinasr
+  

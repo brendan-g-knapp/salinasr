@@ -28,10 +28,7 @@ Import a dataset as a \code{tibble} or \code{sf} \code{tibble}.
 }
 \examples{
 library(salinasr)
-library(sf, quietly = TRUE)
-library(ggmap, quietly = TRUE)
 library(ggplot2)
-library(leaflet)
 
 bikeways_sf <- sal_get_metadata("bikeways") \%>\% 
   sal_get_dataset()
@@ -40,11 +37,9 @@ bikeways_sf \%>\%
   ggplot() +
   geom_sf()
 
-sal_base_map <- get_map("Salinas, CA", zoom = 11)
-
-ggmap(sal_base_map) +
-  geom_sf(data = bikeways_sf, color = "red", inherit.aes = FALSE) 
-
+}
+\references{
+\url{https://cityofsalinas.opendatasoft.com/explore/}
 }
 \author{
 Brendan Knapp \email{brendan.g.knapp@gmail.com}

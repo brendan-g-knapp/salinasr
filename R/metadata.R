@@ -1,37 +1,18 @@
-#' Test if an object is `metadata`.
-#' 
-#' @param x Any R object
-#' 
-#' @return `logical`, `TRUE` if the object inherits from the `metadata` class.
-#' 
-#' @author Brendan Knapp \email{brendan.g.knapp@@gmail.com}
-#' 
-#' @examples 
-#' library(salinasr)
-#' 
-#' meta <- sal_get_metadata("bikeways")
-#' 
-#' is_metadata(meta)
-#'   
-#' @export
-is_metadata <- function(x) {
-  "metadata" %in% class(x)
-}
-
 #' Get a dataset's `metadata`.
 #' 
-#' The `metadata` class is a thin wrapper around a nested `list` object that
+#' The `metadata` class is a thin wrapper around a nested `list` object. It
 #' provides a consistent start point to explore information about `dataset`s and
 #' safely import them into R.
 #' 
+#' @param x `character` representing a `dataset_id` or `tibble` obtained via
+#' `sal_get_dataset()`.
 #' @param dataset_id `character`, ID used to identify dataset. 
 #' @param prioritize_cache `logical`, whether to cache data locally to prevent redundant API calls.
 #' @param cache_dir `character`, path to read/write data.
 #' 
 #' @return `metadata` object
 #' 
-#' @references 
-#' \url{https://cityofsalinas.opendatasoft.com/explore/}
+#' @references \url{https://cityofsalinas.opendatasoft.com/explore/}
 #' 
 #' @author Brendan Knapp \email{brendan.g.knapp@@gmail.com}
 #' 
@@ -51,11 +32,12 @@ is_metadata <- function(x) {
 #' @importFrom purrr map
 #' @export
 #' 
-sal_get_metadata <- function(x) {
+sal_get_metadata <- function(x, prioritize_cache = TRUE, cache_dir = "~/salinasr-cache") {
   UseMethod("sal_get_metadata")
 }
  
 #' @describeIn sal_get_metadata
+#' 
 #' Method to obtain a `metadata` object from a `tbl_df` obtained from a `metadata` object
 #' in the event something occurred to the original `metadata` object.
 #' 
@@ -65,7 +47,6 @@ sal_get_metadata.tbl_df <- function(x, prioritize_cache = TRUE, cache_dir = "~/s
   metadata <- attr(x, "dataset_id")
   sal_get_metadata(metadata, prioritize_cache, cache_dir)
 }
-
 
 #' @describeIn sal_get_metadata
 #' 
@@ -156,17 +137,18 @@ print.metadata <- function(x, cache_dir = "~/salinasr-cache") {
   
   x_names <- names(x)
   empties <- x_names[vapply(x_names, function(y) {
-    is.null(x[[y]]) || is.na(x[[y]]) || is_empty(unlist(x[[y]]))
+    is.null(x[[y]]) || is.na(x[[y]]) || is_empty(x[[y]])
   }, logical(1))]
   empties <- paste0("$", empties)
+
   out <- paste0("$", x_names)
   out <- vapply(out, function(x) {
     ifelse(x %in% empties, crayon::red(x), x)
     }, character(1), USE.NAMES = FALSE)
-
   if(length(out) %% 2 != 0) {
     out[length(out) + 1] <- list("")
   }
+  
   n1 <- out[1:(length(out) %/% 2)]
   n2 <- out[(length(out) %/% 2 + 1):length(out)]
   
@@ -176,3 +158,22 @@ print.metadata <- function(x, cache_dir = "~/salinasr-cache") {
   invisible(x)
 }
 
+#' Test if an object is `metadata`.
+#' 
+#' @param x Any R object
+#' 
+#' @return `logical`, `TRUE` if the object inherits from the `metadata` class.
+#' 
+#' @author Brendan Knapp \email{brendan.g.knapp@@gmail.com}
+#' 
+#' @examples 
+#' library(salinasr)
+#' 
+#' meta <- sal_get_metadata("bikeways")
+#' 
+#' is_metadata(meta)
+#'   
+#' @export
+is_metadata <- function(x) {
+  "metadata" %in% class(x)
+}

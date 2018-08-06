@@ -1,13 +1,22 @@
-# install.packages("roxygen2")
-# remove.packages("salinasr")
-if(dir.exists("docs")) unlink("docs", recursive = TRUE, force = TRUE)
-if(dir.exists("man")) unlink("man", recursive = TRUE, force = TRUE)
-# pkgdown::clean_site(".",)
-# devtools::as.package(".", create = TRUE)
+if("salinasr" %in% installed.packages()[, "Package"]) {
+  remove.packages("salinasr")
+}
+
+if(dir.exists("docs")) {
+  unlink("docs", recursive = TRUE, force = TRUE)
+}
+
+if(dir.exists("man")) {
+  unlink("man", recursive = TRUE, force = TRUE)
+}
+
 devtools::document(".")
+
 devtools::install(".", dependencies = FALSE, upgrade_dependencies = FALSE)
+
 source("data-raw/logo.R")
+
 rmarkdown::render("README.Rmd", output_format = "github_document")
-# pkgdown::clean_site()
-pkgdown::build_site(seed = 1234)
+
+pkgdown::build_site()
 

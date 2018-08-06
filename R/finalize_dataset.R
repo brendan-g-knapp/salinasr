@@ -11,7 +11,7 @@
 #' 
 #' @importFrom dplyr mutate_at select
 #' @importFrom lubridate as_date as_datetime
-sal_finalize_dataset <- function(tbl, metadata, cache_data = TRUE, ...) {
+finalize_dataset <- function(tbl, metadata, cache_data = TRUE, ...) {
   # TODO there must be a better solution to enforce data types
   col_specs <- metadata$fields$type
   names(col_specs) <- metadata$fields$name

@@ -11,8 +11,8 @@
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
+<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
@@ -48,6 +48,16 @@
 <![endif]-->
 
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115043043-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-115043043-4');
+</script>
+
   </head>
 
   <body>
@@ -63,7 +73,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">salinasr</a>
-        <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased package">0.1.0</span>
+        <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased package">0.1.1</span>
       </span>
     </div>
 
@@ -71,12 +81,17 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fa fa-home"></span>
      
+    Home
   </a>
 </li>
 <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="../reference/index.html">
+    <span class="fa fa-file-code-o"></span>
+     
+    Functions
+  </a>
 </li>
       </ul>
       
@@ -85,14 +100,12 @@
   <a href="https://twitter.com/knapply_">
     <span class="fa fa-twitter"></span>
      
-    Twitter
   </a>
 </li>
 <li>
   <a href="https://github.com/knapply/salinasr">
     <span class="fa fa-github fa-lg"></span>
      
-    GitHub
   </a>
 </li>
       </ul>
@@ -154,23 +167,23 @@ Default: <code>"https://cityofsalinas.opendatasoft.com/api/v2/catalog/exports/rs
 <span class='no'>catalog</span></div><div class='output co'>#&gt; # A tibble: 100 x 5
 #&gt;    title        dataset_id   pub_date            description        link       
 #&gt;    &lt;chr&gt;        &lt;chr&gt;        &lt;dttm&gt;              &lt;chr&gt;              &lt;chr&gt;      
-#&gt;  1 Sendas para~ bikeways-es  2018-07-27 09:02:02 Esta capa indica ~ http://cit~
-#&gt;  2 Salinas Out~ salinas-out~ 2018-07-18 21:24:12 This dataset cont~ http://cit~
-#&gt;  3 Eventos de ~ salinas-out~ 2018-07-18 21:24:12 Este conjunto de ~ http://cit~
-#&gt;  4 Oficina de ~ bls-smu0641~ 2018-07-05 21:38:36 Este conjunto de ~ http://cit~
-#&gt;  5 Bureau of L~ bls-smu0641~ 2018-07-05 21:38:36 This dataset from~ http://cit~
-#&gt;  6 Oficina de ~ bls-smu0600~ 2018-07-05 21:28:13 Este conjunto de ~ http://cit~
-#&gt;  7 Bureau of L~ bls-smu0600~ 2018-07-05 21:28:13 This dataset from~ http://cit~
-#&gt;  8 BETA de hue~ building-fo~ 2018-07-03 18:47:00 Esta es una versi~ http://cit~
-#&gt;  9 Building Fo~ building-fo~ 2018-07-03 18:47:00 This is a beta re~ http://cit~
-#&gt; 10 Fire Distri~ firedistric~ 2018-07-03 00:04:17 The districts as ~ http://cit~
+#&gt;  1 Bikeways     bikeways     2018-08-06 09:02:02 This layer depict~ http://cit~
+#&gt;  2 Sendas para~ bikeways-es  2018-07-27 09:02:02 Esta capa indica ~ http://cit~
+#&gt;  3 Salinas Out~ salinas-out~ 2018-07-18 21:24:12 This dataset cont~ http://cit~
+#&gt;  4 Eventos de ~ salinas-out~ 2018-07-18 21:24:12 Este conjunto de ~ http://cit~
+#&gt;  5 Oficina de ~ bls-smu0641~ 2018-07-05 21:38:36 Este conjunto de ~ http://cit~
+#&gt;  6 Bureau of L~ bls-smu0641~ 2018-07-05 21:38:36 This dataset from~ http://cit~
+#&gt;  7 Oficina de ~ bls-smu0600~ 2018-07-05 21:28:13 Este conjunto de ~ http://cit~
+#&gt;  8 Bureau of L~ bls-smu0600~ 2018-07-05 21:28:13 This dataset from~ http://cit~
+#&gt;  9 BETA de hue~ building-fo~ 2018-07-03 18:47:00 Esta es una versi~ http://cit~
+#&gt; 10 Building Fo~ building-fo~ 2018-07-03 18:47:00 This is a beta re~ http://cit~
 #&gt; # ... with 90 more rows</div><div class='input'>
 <span class='no'>catalog</span> <span class='kw'>%&gt;%</span> <span class='fu'>glimpse</span>()</div><div class='output co'>#&gt; Observations: 100
 #&gt; Variables: 5
-#&gt; $ title       &lt;chr&gt; "Sendas para bicicletas", "Salinas Outreach Events", "E...
-#&gt; $ dataset_id  &lt;chr&gt; "bikeways-es", "salinas-outreach-events", "salinas-outr...
-#&gt; $ pub_date    &lt;dttm&gt; 2018-07-27 09:02:02, 2018-07-18 21:24:12, 2018-07-18 2...
-#&gt; $ description &lt;chr&gt; "Esta capa indica los diferentes tipos de sendas para b...
+#&gt; $ title       &lt;chr&gt; "Bikeways", "Sendas para bicicletas", "Salinas Outreach...
+#&gt; $ dataset_id  &lt;chr&gt; "bikeways", "bikeways-es", "salinas-outreach-events", "...
+#&gt; $ pub_date    &lt;dttm&gt; 2018-08-06 09:02:02, 2018-07-27 09:02:02, 2018-07-18 2...
+#&gt; $ description &lt;chr&gt; "This layer depicts the different types of bike paths a...
 #&gt; $ link        &lt;chr&gt; "http://cityofsalinas.opendatasoft.com/explore/dataset/...</div><div class='input'>
 <span class='no'>grocery_stores</span> <span class='kw'>&lt;-</span> <span class='no'>catalog</span> <span class='kw'>%&gt;%</span>
   <span class='fu'>filter</span>(<span class='fu'>grepl</span>(<span class='st'>"grocery stores"</span>, <span class='no'>description</span>))

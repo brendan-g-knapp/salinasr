@@ -1,6 +1,7 @@
 #' Describe a dataset's variables.
 #' 
-#' @param dataset [`tibble::tibble`] as obtained by `sal_get_dataset()`.
+#' @param x A `character` describing a `dataset_id`, a `tibble` as obtained by 
+#' `sal_get_dataset()` or a `metadata` object as obtained by `sal_get_metadata()`.
 #' 
 #' @return [`tibble::tibble`] with columns:
 #'     \item{\bold{`name`} }{names of variables}

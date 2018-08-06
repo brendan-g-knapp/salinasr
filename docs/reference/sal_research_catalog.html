@@ -11,8 +11,8 @@
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
+<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
@@ -49,6 +49,16 @@ or simply for exploration of available data." />
 <![endif]-->
 
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115043043-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-115043043-4');
+</script>
+
   </head>
 
   <body>
@@ -64,7 +74,7 @@ or simply for exploration of available data." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">salinasr</a>
-        <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased package">0.1.0</span>
+        <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased package">0.1.1</span>
       </span>
     </div>
 
@@ -72,12 +82,17 @@ or simply for exploration of available data." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fa fa-home"></span>
      
+    Home
   </a>
 </li>
 <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="../reference/index.html">
+    <span class="fa fa-file-code-o"></span>
+     
+    Functions
+  </a>
 </li>
       </ul>
       
@@ -86,14 +101,12 @@ or simply for exploration of available data." />
   <a href="https://twitter.com/knapply_">
     <span class="fa fa-twitter"></span>
      
-    Twitter
   </a>
 </li>
 <li>
   <a href="https://github.com/knapply/salinasr">
     <span class="fa fa-github fa-lg"></span>
      
-    GitHub
   </a>
 </li>
       </ul>
@@ -157,7 +170,24 @@ Default: <code>getOption("width")</code></p></td>
 <span class='no'>catalog</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='sal_fetch_catalog.html'>sal_fetch_catalog</a></span>()
 
 <span class='no'>catalog</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'>sal_research_catalog</span>()</div><div class='output co'>#&gt; Title: Sendas para bicicletas 
+  <span class='fu'>sal_research_catalog</span>()</div><div class='output co'>#&gt; Title: Bikeways 
+#&gt; ID:    bikeways 
+#&gt; Date Published: 2018-08-06 09:02:02 
+#&gt; Link:
+#&gt; http://cityofsalinas.opendatasoft.com/explore/dataset/bikeways/ 
+#&gt; Description: 
+#&gt; This layer depicts the different types of bike paths around the city of Salinas,
+#&gt; CA, portions of South Monterey County, and the Monterey Peninsula. This data
+#&gt; is useful for projects relating to planning, community development, traffic,
+#&gt; engineering, and numerous others. The field titled 'class' describes the type
+#&gt; of bike path: Class 1: Bike paths Class 2: Bike lane or Buffered Bike Lane Class
+#&gt; 3: Bike routes, aka sharrows or shared-lane marking Class 4: Separated Bikeway
+#&gt; Class 6: Unofficial Class 7: Unpaved Th is service was created by the GIS team
+#&gt; in 2017. Its primary function is to act as a service for the online web maps
+#&gt; that can be found on the Map Gallery within the City of Salinas website.
+#&gt; --------------------------------------------------------------------------------
+#&gt; 
+#&gt; Title: Sendas para bicicletas 
 #&gt; ID:    bikeways-es 
 #&gt; Date Published: 2018-07-27 09:02:02 
 #&gt; Link:
@@ -212,22 +242,6 @@ Default: <code>getOption("width")</code></p></td>
 #&gt; estatal y federal que proporciona cálculos de ingresos, horas y empleo para los
 #&gt; estados y las áreas metropolitanas, en función de los registros de nómina de
 #&gt; establecimientos comerciales.
-#&gt; --------------------------------------------------------------------------------
-#&gt; 
-#&gt; Title: Bureau of Labor Statistics - Salinas Non-Farm Employment Data 2000-2017 
-#&gt; ID:    bls-smu06415000000000001 
-#&gt; Date Published: 2018-07-05 21:38:36 
-#&gt; Link:
-#&gt; http://cityofsalinas.opendatasoft.com/explore/dataset/bls-smu06415000000000001/ 
-#&gt; Description: 
-#&gt; This dataset from the Bureau of Labor Statistics's State and Metro Area
-#&gt; Employment, Hours, &amp;amp; Earnings data contains non-farm, non-seasonally
-#&gt; adjusted employment data for Salinas from 2000 to 2017. This dataset is part of
-#&gt; the Bureau of Labor Statistic's Current Employment Statistics (CES) program. The
-#&gt; CES program is a monthly survey conducted by the Bureau of Labor Statistics. It
-#&gt; is a federal and state cooperative program that provides employment, hours, and
-#&gt; earnings estimates for states and metropolitan areas based on payroll records of
-#&gt; business establishments.
 #&gt; --------------------------------------------------------------------------------
 #&gt; </div><div class='input'>
 </div></pre>

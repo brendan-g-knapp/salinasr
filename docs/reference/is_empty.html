@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Test if an object is <code>metadata</code>. — is_metadata • salinasr</title>
+<title>Does an object contain anything? — is_empty • salinasr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Test if an object is <code>metadata</code>. — is_metadata" />
+<meta property="og:title" content="Does an object contain anything? — is_empty" />
 
-<meta property="og:description" content="Test if an object is metadata." />
+<meta property="og:description" content="Does an object contain anything?" />
 
 <meta property="og:image" content="https://knapply.github.io/salinasr/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -120,39 +120,65 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Test if an object is <code>metadata</code>.</h1>
+    <h1>Does an object contain anything?</h1>
     
-    <div class="hidden name"><code>is_metadata.Rd</code></div>
+    <div class="hidden name"><code>is_empty.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Test if an object is <code>metadata</code>.</p>
+    <p>Does an object contain anything?</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>is_metadata</span>(<span class='no'>x</span>)</pre>
+    <pre class="usage"><span class='fu'>is_empty</span>(<span class='no'>x</span>, <span class='kw'>recursive</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>Any R object</p></td>
+      <td><p>An R object, typically a <code>list</code> or <code>vector</code>.</p></td>
+    </tr>
+    <tr>
+      <th>recursive</th>
+      <td><p><code>logical</code>, whether to <code>unlist</code> <code>x</code> to check for contents at any depth.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>logical</code>, <code>TRUE</code> if the object inherits from the <code>metadata</code> class.</p>
+    <p><code>logical</code>, whether <code>x</code> contains anything.</p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='http://www.rdocumentation.org/packages/base/topics/unlist'>base::unlist</a></code></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='no'>salinasr</span>)
 
-<span class='no'>meta</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='sal_get_metadata.html'>sal_get_metadata</a></span>(<span class='st'>"bikeways"</span>)
-
-<span class='fu'>is_metadata</span>(<span class='no'>meta</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>  
+<span class='no'>vec</span> <span class='kw'>&lt;-</span> <span class='kw'>NULL</span>
+<span class='no'>vec</span></div><div class='output co'>#&gt; NULL</div><div class='input'><span class='fu'>is_empty</span>(<span class='no'>vec</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
+<span class='no'>nested_list</span> <span class='kw'>&lt;-</span> <span class='fu'>list</span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='fu'>list</span>(<span class='kw'>b</span> <span class='kw'>=</span> <span class='fu'>list</span>(<span class='kw'>c</span> <span class='kw'>=</span> <span class='fu'>list</span>(<span class='kw'>d</span> <span class='kw'>=</span> <span class='kw'>NULL</span>), <span class='kw'>e</span> <span class='kw'>=</span> <span class='kw'>NULL</span>), <span class='kw'>f</span> <span class='kw'>=</span> <span class='kw'>NULL</span>), <span class='kw'>g</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+<span class='no'>nested_list</span></div><div class='output co'>#&gt; $a
+#&gt; $a$b
+#&gt; $a$b$c
+#&gt; $a$b$c$d
+#&gt; NULL
+#&gt; 
+#&gt; 
+#&gt; $a$b$e
+#&gt; NULL
+#&gt; 
+#&gt; 
+#&gt; $a$f
+#&gt; NULL
+#&gt; 
+#&gt; 
+#&gt; $g
+#&gt; NULL
+#&gt; </div><div class='input'><span class='fu'>is_empty</span>(<span class='no'>nested_list</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>is_empty</span>(<span class='no'>nested_list</span>, <span class='kw'>recursive</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -161,6 +187,8 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>
