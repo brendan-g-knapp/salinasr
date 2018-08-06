@@ -13,15 +13,21 @@ reference:
     contents:
     - sal_fetch_catalog
     - sal_research_catalog
-  - title: Meta Data
-    desc: Access meta data of available datasets.
+  - title: Metadata
+    desc: A class with methods to explore metadata and the datasets they describe.
     contents:
     - sal_get_metadata
-  - title: Datasets
-    desc: Get datasets as useful R objects.
+  - title: Dataset
+    desc: Methods to import datasets directly into R as immediately useful objects.
     contents:
     - sal_get_dataset
-    - sal_describe_vars
+    - sal_describe_dataset
+  - title: Utilities
+    desc: Functions mainly intended for internal use that may be useful.
+    contents:
+    - is_metadata
+    - sal_get_export_link
+    - sal_finalize_dataset
 
 navbar:
   right:

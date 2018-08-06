@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get a dataset as a useful R object. — sal_get_dataset • salinasr</title>
+<title>Import a dataset as a <code>tibble</code> or <code>sf</code> <code>tibble</code>. — sal_get_dataset • salinasr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Get a dataset as a useful R object. — sal_get_dataset" />
+<meta property="og:title" content="Import a dataset as a <code>tibble</code> or <code>sf</code> <code>tibble</code>. — sal_get_dataset" />
 
-<meta property="og:description" content="Get a dataset as a useful R object." />
+<meta property="og:description" content="Import a dataset as a tibble or sf tibble." />
 
 <meta property="og:image" content="https://knapply.github.io/salinasr/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -107,25 +107,41 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get a dataset as a useful R object.</h1>
+    <h1>Import a dataset as a <code>tibble</code> or <code>sf</code> <code>tibble</code>.</h1>
     
     <div class="hidden name"><code>sal_get_dataset.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Get a dataset as a useful R object.</p>
+    <p>Import a dataset as a <code>tibble</code> or <code>sf</code> <code>tibble</code>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>sal_get_dataset</span>(<span class='no'>metadata</span>)</pre>
+    <pre class="usage"><span class='fu'>sal_get_dataset</span>(<span class='no'>metadata</span>, <span class='kw'>prioritize_cache</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>cache_dir</span> <span class='kw'>=</span> <span class='st'>"~/salinasr-cache"</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>metadata</th>
-      <td><p>an object obtained by <code><a href='sal_get_metadata.html'>sal_get_metadata()</a></code></p></td>
+      <td><p>A <code>metadata</code> object as obtained by <code><a href='sal_get_metadata.html'>sal_get_metadata()</a></code>.</p></td>
+    </tr>
+    <tr>
+      <th>prioritize_cache</th>
+      <td><p><code>logical</code>, whether to prioritize cached data and avoid
+unnecessary API calls. <br />
+Default: <code>TRUE</code></p></td>
+    </tr>
+    <tr>
+      <th>cache_dir</th>
+      <td><p><code>character</code>, path to the directory in which data is cached. <br />
+Defailt: <code>"~/salinasr-cache"</code></p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Additional arguments to be passed to or from methods.</p></td>
     </tr>
     </table>
     
@@ -133,14 +149,6 @@
 
     <p><code><a href='http://www.rdocumentation.org/packages/tibble/topics/tibble'>tibble::tibble</a></code>, which will also be an <code><a href='http://www.rdocumentation.org/packages/sf/topics/sf'>sf::st_sf</a></code> object if
 <code>metadata</code> refers to data marked as having <code>"geo"</code> features.</p>
-    
-    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
-
-    <p><a href='https://r-spatial.github.io/sf/'>sf: Simple Features for R</a></p>
-    
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'><p><code><a href='http://www.rdocumentation.org/packages/ggplot2/topics/ggsf'>ggplot2::geom_sf()</a></code></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -158,23 +166,7 @@
 <span class='no'>sal_base_map</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='http://www.rdocumentation.org/packages/ggmap/topics/get_map'>get_map</a></span>(<span class='st'>"Salinas, CA"</span>, <span class='kw'>zoom</span> <span class='kw'>=</span> <span class='fl'>11</span>)</div><div class='output co'>#&gt; <span class='message'>Map from URL : http://maps.googleapis.com/maps/api/staticmap?center=Salinas,+CA&amp;zoom=11&amp;size=640x640&amp;scale=2&amp;maptype=terrain&amp;language=en-EN&amp;sensor=false</span></div><div class='output co'>#&gt; <span class='message'>Information from URL : http://maps.googleapis.com/maps/api/geocode/json?address=Salinas,%20CA&amp;sensor=false</span></div><div class='input'>
 <span class='fu'><a href='http://www.rdocumentation.org/packages/ggmap/topics/ggmap'>ggmap</a></span>(<span class='no'>sal_base_map</span>) +
   <span class='fu'><a href='http://www.rdocumentation.org/packages/ggplot2/topics/ggsf'>geom_sf</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>bikeways_sf</span>, <span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"red"</span>, <span class='kw'>inherit.aes</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='message'>Coordinate system already present. Adding new coordinate system, which will replace the existing one.</span></div><div class='img'><img src='sal_get_dataset-2.png' alt='' width='700' height='433' /></div><div class='input'>
-<span class='co'># outputs interactive leaflet map:</span>
-<span class='no'>bikeways_sf</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='http://www.rdocumentation.org/packages/leaflet/topics/leaflet'>leaflet</a></span>() <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='http://www.rdocumentation.org/packages/leaflet/topics/addProviderTiles'>addProviderTiles</a></span>(<span class='kw pkg'>leaflet</span><span class='kw ns'>::</span><span class='no'><a href='http://www.rdocumentation.org/packages/leaflet/topics/providers'>providers</a></span>$<span class='no'>OpenStreetMap</span>, <span class='kw'>group</span> <span class='kw'>=</span> <span class='st'>"Street"</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='http://www.rdocumentation.org/packages/leaflet/topics/addProviderTiles'>addProviderTiles</a></span>(<span class='no'>providers</span>$<span class='no'>Esri.WorldImagery</span>, <span class='kw'>group</span> <span class='kw'>=</span> <span class='st'>"Optical"</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='http://www.rdocumentation.org/packages/leaflet/topics/map-layers'>addPolylines</a></span>(<span class='kw'>label</span> <span class='kw'>=</span> ~ <span class='no'>name</span>,
-               <span class='kw'>popup</span> <span class='kw'>=</span> <span class='fu'>paste0</span>(
-                 <span class='st'>"&lt;b&gt;Name:&lt;/b&gt; "</span>, <span class='no'>bikeways_sf</span>$<span class='no'>name</span>, <span class='st'>"&lt;br&gt;"</span>,
-                 <span class='st'>"&lt;b&gt;Jurisdiction:&lt;/b&gt; "</span>, <span class='no'>bikeways_sf</span>$<span class='no'>juris</span>, <span class='st'>"&lt;br&gt;"</span>,
-                 <span class='st'>"&lt;b&gt;Start:&lt;/b&gt; "</span>, <span class='no'>bikeways_sf</span>$<span class='no'>start</span>, <span class='st'>"&lt;br&gt;"</span>,
-                 <span class='st'>"&lt;b&gt;End&lt;/b&gt;: "</span>, <span class='no'>bikeways_sf</span>$<span class='no'>end</span>, <span class='st'>"&lt;br&gt;"</span>,
-                 <span class='st'>"&lt;b&gt;Miles:&lt;/b&gt; "</span>, <span class='fu'>round</span>(<span class='no'>bikeways_sf</span>$<span class='no'>miles</span>, <span class='fl'>2</span>), <span class='st'>"&lt;br&gt;"</span>,
-                 <span class='st'>"&lt;b&gt;Feet:&lt;/b&gt; "</span>, <span class='fu'>round</span>(<span class='no'>bikeways_sf</span>$<span class='no'>feet</span>, <span class='fl'>2</span>)
-                 )
-               ) <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='http://www.rdocumentation.org/packages/leaflet/topics/addLayersControl'>addLayersControl</a></span>(<span class='kw'>baseGroups</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"Street"</span>, <span class='st'>"Optical"</span>),
-                   <span class='kw'>options</span> <span class='kw'>=</span> <span class='fu'><a href='http://www.rdocumentation.org/packages/leaflet/topics/addLayersControl'>layersControlOptions</a></span>(<span class='kw'>collapsed</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>))</div></pre>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -182,10 +174,6 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-
-      <li><a href="#references">References</a></li>
-
-      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

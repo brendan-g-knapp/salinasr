@@ -139,8 +139,8 @@
     </tbody><tbody>
       <tr>
         <th colspan="2">
-          <h2 id="section-meta-data" class="hasAnchor"><a href="#section-meta-data" class="anchor"></a>Meta Data</h2>
-          <p class="section-desc"><p>Access meta data of available datasets.</p></p>
+          <h2 id="section-metadata" class="hasAnchor"><a href="#section-metadata" class="anchor"></a>Metadata</h2>
+          <p class="section-desc"><p>A class with methods to explore metadata and the datasets they describe.</p></p>
         </th>
       </tr>
       <tr>
@@ -148,13 +148,13 @@
         <td>
           <p><code><a href="sal_get_metadata.html">sal_get_metadata()</a></code> <code><a href="sal_get_metadata.html">print(<i>&lt;metadata&gt;</i>)</a></code> </p>
         </td>
-        <td><p>Fetch a dataset's meta data.</p></td>
+        <td><p>Get a dataset's <code>metadata</code>.</p></td>
       </tr>
     </tbody><tbody>
       <tr>
         <th colspan="2">
-          <h2 id="section-datasets" class="hasAnchor"><a href="#section-datasets" class="anchor"></a>Datasets</h2>
-          <p class="section-desc"><p>Get datasets as useful R objects.</p></p>
+          <h2 id="section-dataset" class="hasAnchor"><a href="#section-dataset" class="anchor"></a>Dataset</h2>
+          <p class="section-desc"><p>Methods to import datasets directly into R as immediately useful objects.</p></p>
         </th>
       </tr>
       <tr>
@@ -162,13 +162,39 @@
         <td>
           <p><code><a href="sal_get_dataset.html">sal_get_dataset()</a></code> </p>
         </td>
-        <td><p>Get a dataset as a useful R object.</p></td>
+        <td><p>Import a dataset as a <code>tibble</code> or <code>sf</code> <code>tibble</code>.</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="sal_describe_vars.html">sal_describe_vars()</a></code> </p>
+          <p><code><a href="sal_describe_dataset.html">sal_describe_dataset()</a></code> </p>
         </td>
         <td><p>Describe a dataset's variables.</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-utilities" class="hasAnchor"><a href="#section-utilities" class="anchor"></a>Utilities</h2>
+          <p class="section-desc"><p>Functions mainly intended for internal use that may be useful.</p></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="is_metadata.html">is_metadata()</a></code> </p>
+        </td>
+        <td><p>Test if an object is <code>metadata</code>.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="sal_get_export_link.html">sal_get_export_link()</a></code> </p>
+        </td>
+        <td><p>Obtain a URL pointing to a specific dataset in the desired file type.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="sal_finalize_dataset.html">sal_finalize_dataset()</a></code> </p>
+        </td>
+        <td><p>Enforce a <code>dataset</code>'s data types, as described in its <code>metadata</code>.</p></td>
       </tr>
     </tbody>
     </table>
@@ -178,8 +204,9 @@
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#section-catalog">Catalog</a></li>
-      <li><a href="#section-meta-data">Meta Data</a></li>
-      <li><a href="#section-datasets">Datasets</a></li>
+      <li><a href="#section-metadata">Metadata</a></li>
+      <li><a href="#section-dataset">Dataset</a></li>
+      <li><a href="#section-utilities">Utilities</a></li>
     </ul>
   </div>
 </div>

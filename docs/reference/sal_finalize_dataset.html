@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Map function to extract elements by name. — nap_extract • salinasr</title>
+<title>Enforce a <code>dataset</code>'s data types, as described in its <code>metadata</code>. — sal_finalize_dataset • salinasr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Map function to extract elements by name. — nap_extract" />
+<meta property="og:title" content="Enforce a <code>dataset</code>'s data types, as described in its <code>metadata</code>. — sal_finalize_dataset" />
 
-<meta property="og:description" content="Map function to extract elements by name." />
+<meta property="og:description" content="Intended for internal use, but exported as it may prove useful." />
 
 <meta property="og:image" content="https://knapply.github.io/salinasr/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -107,25 +107,49 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Map function to extract elements by name.</h1>
+    <h1>Enforce a <code>dataset</code>'s data types, as described in its <code>metadata</code>.</h1>
     
-    <div class="hidden name"><code>nap_extract.Rd</code></div>
+    <div class="hidden name"><code>sal_finalize_dataset.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Map function to extract elements by name.</p>
+    <p>Intended for internal use, but exported as it may prove useful.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>nap_extract</span>(<span class='no'>.x</span>, <span class='no'>.f</span>)</pre>
-        
+    <pre class="usage"><span class='fu'>sal_finalize_dataset</span>(<span class='no'>tbl</span>, <span class='no'>metadata</span>, <span class='kw'>cache_data</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>...</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>tbl</th>
+      <td><p><code><a href='http://www.rdocumentation.org/packages/tibble/topics/tibble'>tibble::tibble</a></code></p></td>
+    </tr>
+    <tr>
+      <th>metadata</th>
+      <td><p>A <code>metadata</code> object as obtained by <code><a href='sal_get_metadata.html'>sal_get_metadata()</a></code>.</p></td>
+    </tr>
+    </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p><code><a href='http://www.rdocumentation.org/packages/tibble/topics/tibble'>tibble::tibble</a></code></p>
+    
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-                </ul>
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#value">Value</a></li>
+          </ul>
+
+    <h2>Author</h2>
+    
+Brendan Knapp <a href='mailto:brendan.g.knapp@gmail.com'>brendan.g.knapp@gmail.com</a>
 
   </div>
 </div>
