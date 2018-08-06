@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Describe a dataset's variables. — sal_describe_vars • salinasr</title>
+<title>Describe a dataset's variables. — sal_describe_dataset • salinasr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,7 +30,7 @@
 
 
 
-<meta property="og:title" content="Describe a dataset's variables. — sal_describe_vars" />
+<meta property="og:title" content="Describe a dataset's variables. — sal_describe_dataset" />
 
 <meta property="og:description" content="Describe a dataset's variables." />
 
@@ -109,7 +109,7 @@
     <div class="page-header">
     <h1>Describe a dataset's variables.</h1>
     
-    <div class="hidden name"><code>sal_describe_vars.Rd</code></div>
+    <div class="hidden name"><code>sal_describe_dataset.Rd</code></div>
     </div>
 
     <div class="ref-description">
@@ -118,7 +118,16 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>sal_describe_vars</span>(<span class='no'>dataset</span>)</pre>
+    <pre class="usage"><span class='fu'>sal_describe_dataset</span>(<span class='no'>x</span>)
+
+<span class='co'># S3 method for tbl_df</span>
+<span class='fu'>sal_describe_dataset</span>(<span class='no'>x</span>)
+
+<span class='co'># S3 method for character</span>
+<span class='fu'>sal_describe_dataset</span>(<span class='no'>x</span>)
+
+<span class='co'># S3 method for metadata</span>
+<span class='fu'>sal_describe_dataset</span>(<span class='no'>x</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -137,13 +146,34 @@
 <dt><b><code>type</code></b> </dt><dd><p>original data type of variables</p></dd>
 
     
+    <h2 class="hasAnchor" id="methods-by-class-"><a class="anchor" href="#methods-by-class-"></a>Methods (by class)</h2>
+
+    <ul>
+<li><p><code>tbl_df</code>: Method to obtain description from a <code><a href='http://www.rdocumentation.org/packages/tibble/topics/tibble'>tibble::tibble</a></code></p></li>
+<li><p><code>character</code>: Method to obtain description from a <code>character</code>.</p></li>
+<li><p><code>metadata</code>: Method to obtain description from a <code>metadata</code> object obtained by <code><a href='sal_get_metadata.html'>sal_get_metadata()</a></code>.</p></li>
+</ul>
+    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='no'>salinasr</span>)
 
 <span class='fu'><a href='sal_get_metadata.html'>sal_get_metadata</a></span>(<span class='st'>"bikeways"</span>) <span class='kw'>%&gt;%</span>
   <span class='fu'><a href='sal_get_dataset.html'>sal_get_dataset</a></span>() <span class='kw'>%&gt;%</span>
-  <span class='fu'>sal_describe_vars</span>()</div><div class='output co'>#&gt; # A tibble: 11 x 3
+  <span class='fu'>sal_describe_dataset</span>()</div><div class='output co'>#&gt; $title
+#&gt; [1] "Bikeways"
+#&gt; 
+#&gt; $dataset_id
+#&gt; [1] "bikeways"
+#&gt; 
+#&gt; $data_processed
+#&gt; [1] "2018-08-05T09:02:20+00:00"
+#&gt; 
+#&gt; $geospatial
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $variables
+#&gt; # A tibble: 11 x 3
 #&gt;    name         label           type        
 #&gt;    &lt;chr&gt;        &lt;chr&gt;           &lt;chr&gt;       
 #&gt;  1 objectid     OBJECTID        int         
@@ -156,7 +186,8 @@
 #&gt;  8 juris        Jurisdiction    text        
 #&gt;  9 shape_length Shape_Length    double      
 #&gt; 10 geo_shape    geo_shape       geo_shape   
-#&gt; 11 geo_point_2d geo_point_2d    geo_point_2d</div><div class='input'>  
+#&gt; 11 geo_point_2d geo_point_2d    geo_point_2d
+#&gt; </div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -165,6 +196,8 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#methods-by-class-">Methods (by class)</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

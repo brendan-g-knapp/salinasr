@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Type-enforced map to extract elements by name. — nap_extract_chr • salinasr</title>
+<title>Test if an object is <code>metadata</code>. — is_metadata • salinasr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Type-enforced map to extract elements by name. — nap_extract_chr" />
+<meta property="og:title" content="Test if an object is <code>metadata</code>. — is_metadata" />
 
-<meta property="og:description" content="Type-enforced map to extract elements by name." />
+<meta property="og:description" content="Test if an object is metadata." />
 
 <meta property="og:image" content="https://knapply.github.io/salinasr/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -107,25 +107,54 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Type-enforced map to extract elements by name.</h1>
+    <h1>Test if an object is <code>metadata</code>.</h1>
     
-    <div class="hidden name"><code>nap_extract_chr.Rd</code></div>
+    <div class="hidden name"><code>is_metadata.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Type-enforced map to extract elements by name.</p>
+    <p>Test if an object is <code>metadata</code>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>nap_extract_chr</span>(<span class='no'>x</span>, <span class='no'>.name</span>, <span class='no'>...</span>)</pre>
-        
+    <pre class="usage"><span class='fu'>is_metadata</span>(<span class='no'>x</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p>Any R object</p></td>
+    </tr>
+    </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
+    <p><code>logical</code>, <code>TRUE</code> if the object inherits from the <code>metadata</code> class.</p>
+    
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='no'>salinasr</span>)
+
+<span class='no'>meta</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='sal_get_metadata.html'>sal_get_metadata</a></span>(<span class='st'>"bikeways"</span>)
+
+<span class='fu'>is_metadata</span>(<span class='no'>meta</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>  
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-                </ul>
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#value">Value</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
+
+    <h2>Author</h2>
+    
+Brendan Knapp <a href='mailto:brendan.g.knapp@gmail.com'>brendan.g.knapp@gmail.com</a>
 
   </div>
 </div>

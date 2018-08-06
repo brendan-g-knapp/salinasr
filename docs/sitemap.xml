@@ -4,16 +4,7 @@
     <loc>https://knapply.github.io/salinasr//index.html</loc>
   </url>
   <url>
-    <loc>https://knapply.github.io/salinasr//reference/nap.html</loc>
-  </url>
-  <url>
-    <loc>https://knapply.github.io/salinasr//reference/nap_chr.html</loc>
-  </url>
-  <url>
-    <loc>https://knapply.github.io/salinasr//reference/nap_extract.html</loc>
-  </url>
-  <url>
-    <loc>https://knapply.github.io/salinasr//reference/nap_extract_chr.html</loc>
+    <loc>https://knapply.github.io/salinasr//reference/is_metadata.html</loc>
   </url>
   <url>
     <loc>https://knapply.github.io/salinasr//reference/reexports.html</loc>
@@ -22,13 +13,19 @@
     <loc>https://knapply.github.io/salinasr//reference/salinasr.html</loc>
   </url>
   <url>
-    <loc>https://knapply.github.io/salinasr//reference/sal_describe_vars.html</loc>
+    <loc>https://knapply.github.io/salinasr//reference/sal_describe_dataset.html</loc>
   </url>
   <url>
     <loc>https://knapply.github.io/salinasr//reference/sal_fetch_catalog.html</loc>
   </url>
   <url>
+    <loc>https://knapply.github.io/salinasr//reference/sal_finalize_dataset.html</loc>
+  </url>
+  <url>
     <loc>https://knapply.github.io/salinasr//reference/sal_get_dataset.html</loc>
+  </url>
+  <url>
+    <loc>https://knapply.github.io/salinasr//reference/sal_get_export_link.html</loc>
   </url>
   <url>
     <loc>https://knapply.github.io/salinasr//reference/sal_get_metadata.html</loc>

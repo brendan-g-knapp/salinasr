@@ -32,6 +32,7 @@
 #' grocery_stores %>% pull(dataset_id)
 #'
 #' @importFrom dplyr arrange mutate select
+#' @importFrom purrr map map_chr
 #' @importFrom stringr str_extract str_remove_all
 #' @importFrom tibble tibble
 #' @importFrom xml2 as_list read_xml
@@ -40,20 +41,20 @@ sal_fetch_catalog <- function(rss_url = "https://cityofsalinas.opendatasoft.com/
   xml_raw <- try_connection(xml2::read_xml(rss_url))
   xml_parsed <- xml2::as_list(xml_raw)
   
-  channels <- nap_extract(xml_parsed, "channel")
+  channels <- map(xml_parsed, "channel")
   # channel_titles <- nap_extract(channels, "title")       # may be useful as the portal grows
   # channel_titles_rss <- nap_chr(channel_titles, unlist)
   # channel_link <- nap_extract(channels, "link")
   channels_rss <- channels$rss
 
-  items <- nap(channels_rss, unlist, recursive = FALSE)
+  items <- map(channels_rss, unlist, recursive = FALSE)
   items <- keep_if_named(items, "item")
 
-  out <- tibble(title = nap_extract_chr(items, "title"),
-                link = nap_extract_chr(items, "link"),
-                description = clean_html(nap_extract_chr(items, "description")),
-                pub_date = nap_extract_chr(items, "pubDate"))
-  out <- mutate(out, dataset_id = stringr::str_extract(link, "(?<=dataset/).*?(?=/$)"))
+  out <- tibble(title = map_chr(items, "title"),
+                link = map_chr(items, "link"),
+                description = clean_html(map_chr(items, "description")),
+                pub_date = map_chr(items, "pubDate"))
+  out <- mutate(out, dataset_id = str_extract(link, "(?<=dataset/).*?(?=/$)"))
   out <- mutate(out, pub_date = pub_date %>% 
                   str_remove_all("^[A-Z][a-z]{2},\\s|\\sGMT$") %>% 
                   as.POSIXct(format = "%d %b %Y %H:%M:%S")
@@ -89,7 +90,7 @@ sal_fetch_catalog <- function(rss_url = "https://cityofsalinas.opendatasoft.com/
 #' catalog %>% 
 #'   sal_research_catalog()
 #' 
-#' @importFrom crayon bgBlack blue bold cyan green magenta red yellow
+#' @importFrom crayon blue bold cyan green magenta red yellow
 #' @importFrom dplyr slice
 #' @importFrom glue glue
 #' @importFrom stringr str_conv str_wrap

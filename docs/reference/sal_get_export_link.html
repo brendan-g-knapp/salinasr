@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Basic map function wrapping <code>lapply()</code>. — nap • salinasr</title>
+<title>Obtain a URL pointing to a specific dataset in the desired file type. — sal_get_export_link • salinasr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Basic map function wrapping <code>lapply()</code>. — nap" />
+<meta property="og:title" content="Obtain a URL pointing to a specific dataset in the desired file type. — sal_get_export_link" />
 
-<meta property="og:description" content="Basic map function wrapping lapply()." />
+<meta property="og:description" content="Obtain a URL pointing to a specific dataset in the desired file type." />
 
 <meta property="og:image" content="https://knapply.github.io/salinasr/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -107,25 +107,39 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Basic map function wrapping <code>lapply()</code>.</h1>
+    <h1>Obtain a URL pointing to a specific dataset in the desired file type.</h1>
     
-    <div class="hidden name"><code>nap.Rd</code></div>
+    <div class="hidden name"><code>sal_get_export_link.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Basic map function wrapping <code>lapply()</code>.</p>
+    <p>Obtain a URL pointing to a specific dataset in the desired file type.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>nap</span>(<span class='no'>.x</span>, <span class='no'>.f</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>sal_get_export_link</span>(<span class='no'>metadata</span>, <span class='kw'>file_type</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"geojson"</span>, <span class='st'>"json"</span>, <span class='st'>"csv"</span>,
+  <span class='st'>"shp"</span>))</pre>
         
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='no'>salinasr</span>)
+
+<span class='no'>meta</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='sal_get_metadata.html'>sal_get_metadata</a></span>(<span class='st'>"bikeways"</span>)
+
+<span class='no'>meta</span> <span class='kw'>%&gt;%</span>
+  <span class='fu'>sal_get_export_link</span>()</div><div class='output co'>#&gt; [1] "https://cityofsalinas.opendatasoft.com/api/v2/catalog/datasets/bikeways/exports/geojson"
+#&gt; [2] "https://cityofsalinas.opendatasoft.com/api/v2/catalog/datasets/bikeways/exports/json"   
+#&gt; [3] "https://cityofsalinas.opendatasoft.com/api/v2/catalog/datasets/bikeways/exports/csv"    
+#&gt; [4] "https://cityofsalinas.opendatasoft.com/api/v2/catalog/datasets/bikeways/exports/shp"    </div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-                </ul>
+            
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>
